@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MML</title>
     <link rel="stylesheet" href="style.css">
-    <!-- font -->
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <!-- NAVIGATION -->
     <nav>
         <!-- <div class="nav-container"> -->
         <a href="#home" class="nav-item">
@@ -26,7 +27,14 @@
         <a href="#about" class="nav-item">About</a>
         <!-- </div> -->
     </nav>
+
+    <!-- HOME -->
     <section id="home">
+
+        <!-- DARK MODE TOGGLE -->
+        <button class="dark-mode" onclick="myFunction()">Toggle dark mode</button>
+
+        <!-- HERO -->
         <div class="row">
             <div class="column">
                 <img src="images/MML-Tilt.png" class="centered"
@@ -57,6 +65,8 @@
             </div>
         </div>
     </section>
+
+    <!-- PROJECTS -->
     <section id="projects">
         <div class="row">
             <div class="column">
@@ -64,7 +74,9 @@
             </div>
             <div class="column">
                 <div class="container-projects">
-                    <div class="proj"></div>
+                    <div class="proj">
+
+                    </div>
                     <div class="proj"></div>
                     <div class="proj"></div>
                     <div class="proj"></div>
@@ -72,13 +84,51 @@
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- WORKING -->
     <section id="experience">
-        <h4 class="title-text">Working</h4>
+        <div class="row">
+            <div class="column">
+
+            </div>
+            <div class="column">
+                <h4 class="title-text">Working</h4>
+            </div>
+        </div>
     </section>
+
+    <!-- ABOUT -->
     <section id="about">
         <h4 class="title-text">About</h4>
     </section>
 
+    <!-- TOGGLE DARK MODE -->
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+    </script>
 </body>
 
 </html>

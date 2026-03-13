@@ -64,6 +64,14 @@ nav {
   height: 100vh;
   width: 100vw;
 }
+
+/* Dark Mode */
+.dark-mode {
+  margin-top: 10vh;
+  background-color: #333;
+  color: #fff;
+}
+
 .row {
   position: relative;
 }
@@ -168,6 +176,9 @@ button:hover {
 }
 
 /* projects */
+section {
+  margin-top: 10vh;
+}
 .container-projects {
   display: flex;
   flex-wrap: wrap;
