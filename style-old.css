@@ -1,0 +1,180 @@
+:root {
+  --color-bg-primary: "#565360";
+  --color-bg-secondary: "#908E9B";
+  --color-accent: "#fc3357";
+  --color-text: "#F2F5F5";
+/* 
+  --color-text: "#565360";
+  --color-label: "#908E9B";
+  --color-disabled: "#E1DFE9"; */
+  /* --length-sm1: "0.25rem";
+  --length-sm2: "0.375rem";
+  --length-sm3: "0.5rem";
+  --length-med1: "1rem";
+  --length-med2: "1.25rem";
+  --length-med3: "1.5rem";
+  --length-lrg1: "2rem";
+  --length-lrg2: "3rem";
+  --length-lrg3: "4rem"; */
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  color: var(--color-text);
+  background: linear-gradient(to right, #c2c8da 0%, #56678b 100%);
+}
+/* Navigation */
+nav {
+  display: flex;
+  margin: auto;
+}
+
+.nav {
+  height: 100px;
+  width: 100px; /* A fixed width as the default */
+  border-radius: 5px;
+}
+
+.nav-center {
+  text-align: center;
+  flex-grow: 1; /* Set the middle element to grow and stretch */
+}
+
+.nav + .nav {
+  margin-left: 5%;
+  display: block;
+}
+
+.social {
+  margin: 5%;
+  display: block;
+}
+
+nav a img {
+  display: inline-flex;
+  color: #fc3357;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  border: #fc3357 solid 2px;
+  border-radius: 50%;
+}
+
+a:hover {
+  color: #fc3357;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* Hero section */
+.split {
+  height: 50%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  /* background-color: pink; */
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  /* background-color: hotpink; */
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+p {
+  /* font-size: 1.2rem; */
+  color: var(--color-text);
+  margin: 2rem;
+  padding-left: 2rem;
+  text-align: left;
+}
+
+
+/* sliding name */
+.container-hero {
+  width: 100%;
+}
+h1, h2, h3, h4, h5, .title-text {
+  /* font-family: "Montserrat", sans-serif; */
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: bold;
+  color: #fc3357;
+  font-size: 8vw;
+  padding-bottom: 1rem;
+}
+
+.slide-text {
+  animation: slideLeft 3s ease-out forwards;
+  display: block;
+  white-space: nowrap;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.slide-text-right {
+  animation: slideRight 3s ease-out forwards;
+  display: block;
+  white-space: nowrap;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(25%);
+  }
+}
+/* Buttons */
+button {
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  margin: auto;
+  background-color: #fff;
+  border: 3px solid #fc3357;
+  width: 200px;
+  font-size: 14px;
+  color: #fc3357;
+  padding: 10px 30px;
+}
+
+button:hover {
+  background-color: white;
+  color: #fc3357;
+  font-weight: bold;
+}

@@ -1,0 +1,186 @@
+:root {
+  --color-primary: "#565360";
+  --color-bg-secondary: "#908E9B";
+  --color-accent: "#fc3357";
+  --color-text: "#F2F5F5";
+  --color-white: "#fff";
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  color: var(--color-text);
+
+  /* background: linear-gradient(to right, #c2c8da 0%, #56678b 100%); */
+}
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  z-index: 1000;
+
+  background-color: #fff;
+  color: var(--color-primary);
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  margin: auto;
+  padding: 10px;
+  font-size: 1rem;
+  text-align: left;
+  width: 10%;
+}
+.nav-name {
+  padding: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 50%;
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .nav-container {
+    flex-direction: column;
+  }
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+  .nav-name {
+    display: none;
+  }
+}
+
+/* Hero section */
+#home {
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+.row {
+  position: relative;
+}
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  height: 50vh;
+  margin: 200px auto auto auto;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+img.centered {
+  width: 70%;
+  display: block;
+  margin: 10% 0 auto;
+  /* border-radius: 50%; */
+}
+
+/* sliding name */
+.container-hero {
+  width: 100%;
+  margin: 0;
+  line-height: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title-text {
+  /* font-family: "Montserrat", sans-serif; */
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: bold;
+  color: #fc3357;
+  font-size: 8vw;
+  padding-bottom: 1rem;
+}
+
+.slide-text {
+  animation: slideLeft 3s ease-out forwards;
+  display: block;
+  white-space: nowrap;
+  margin: auto;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.slide-text-right {
+  animation: slideRight 3s ease-out forwards;
+  display: block;
+  white-space: nowrap;
+  margin: auto;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(25%);
+  }
+}
+
+img {
+  display: inline-flex;
+  margin: auto;
+  align-items: center;
+}
+/* Buttons */
+button {
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  margin: auto;
+  background-color: #fff;
+  border: 3px solid #fc3357;
+  width: 200px;
+  font-size: 14px;
+  color: #fc3357;
+  padding: 10px 30px;
+}
+
+button:hover {
+  background-color: white;
+  color: #fc3357;
+  font-weight: bold;
+}
+
+/* projects */
+.container-projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.proj {
+  width: 48%;
+  padding-bottom: 48%; /* Same as width, sets height */
+  margin-bottom: 2%; /* (100-32*3)/2 */
+  position: relative;
+
+  background: dodgerblue;
+  border-radius: 5px;
+  opacity: 0.7;
+}
