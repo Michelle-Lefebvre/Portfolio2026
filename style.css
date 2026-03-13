@@ -1,9 +1,9 @@
 :root {
-  --color-primary: "#565360";
-  --color-bg-secondary: "#908E9B";
-  --color-accent: "#fc3357";
-  --color-text: "#F2F5F5";
-  --color-white: "#fff";
+  --color-bg-primary: #565360;
+  --color-bg-secondary: #908e9b;
+  --color-accent: #fc3357;
+  --color-text: #f2f5f5;
+  --color-white: #fff;
 }
 * {
   box-sizing: border-box;
@@ -14,7 +14,7 @@ body {
   font-family: "Montserrat", sans-serif;
   color: var(--color-text);
 
-  /* background: linear-gradient(to right, #c2c8da 0%, #56678b 100%); */
+  background: linear-gradient(to right, #c2c8da 0%, #56678b 100%);
 }
 /* Navigation */
 nav {
@@ -24,8 +24,8 @@ nav {
   width: 100vw;
   z-index: 1000;
 
-  background-color: #fff;
-  color: var(--color-primary);
+  background-color: var(--color-text);
+  color: var(--color-bg-primary);
   display: flex;
   flex-direction: row;
 }
@@ -67,8 +67,8 @@ nav {
 /* Dark Mode */
 .dark-mode {
   margin-top: 10vh;
-  background-color: #212030;
-  color: #fff;
+
+  color: var(--color-white);
 }
 .row {
   display: flex;
@@ -77,8 +77,8 @@ nav {
 }
 .column {
   flex: 1 1 50%;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
+  /* background-color: var(--color-bg-secondary); */
+  /* border: 1px solid #ccc; */
 }
 
 /* Clear floats after the columns */
@@ -88,14 +88,14 @@ nav {
   clear: both;
 }
 img.centered {
-  width: 70%;
+  width: 70vw;
   display: block;
   margin: 10% 0 auto;
 }
 
 /* sliding name */
 .container-hero {
-  width: 100%;
+  width: 70vw;
   margin: 0;
   line-height: 0;
 }
@@ -109,7 +109,7 @@ h6,
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: bold;
-  color: #fc3357;
+  color: var(--color-accent);
   font-size: 8vw;
   padding-bottom: 1rem;
 }
@@ -158,17 +158,17 @@ button {
   font-weight: bold;
   display: block;
   margin: 3rem auto;
-  background-color: #fff;
-  border: 3px solid #fc3357;
+  background-color: var(--color-white);
+  border: 3px solid var(--color-accent);
   width: 200px;
   font-size: 14px;
-  color: #fc3357;
+  color: var(--color-accent);
   padding: 10px 30px;
 }
 
 button:hover {
-  background-color: white;
-  color: #fc3357;
+  background-color: var(--color-white);
+  color: var(--color-accent);
   font-weight: bold;
 }
 
@@ -193,8 +193,8 @@ span {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background-color: black;
-  color: white;
+  /* background-color: black; */
+  color: var(--color-white);
   padding-left: 20px;
   padding-right: 20px;
 }
