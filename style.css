@@ -44,7 +44,6 @@ nav {
   width: 50%;
 }
 
-/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
   .nav-container {
     flex-direction: column;
@@ -68,19 +67,18 @@ nav {
 /* Dark Mode */
 .dark-mode {
   margin-top: 10vh;
-  background-color: #333;
+  background-color: #212030;
   color: #fff;
 }
-
 .row {
-  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  /* gap: 20px; Adds space between columns */
 }
-/* Create two equal columns that floats next to each other */
 .column {
-  float: left;
-  width: 50%;
-  height: 50vh;
-  margin: 200px auto auto auto;
+  flex: 1 1 50%;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
 }
 
 /* Clear floats after the columns */
@@ -93,7 +91,6 @@ img.centered {
   width: 70%;
   display: block;
   margin: 10% 0 auto;
-  /* border-radius: 50%; */
 }
 
 /* sliding name */
@@ -109,7 +106,6 @@ h4,
 h5,
 h6,
 .title-text {
-  /* font-family: "Montserrat", sans-serif; */
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: bold;
@@ -155,12 +151,13 @@ img {
   margin: auto;
   align-items: center;
 }
+
 /* Buttons */
 button {
   text-transform: uppercase;
   font-weight: bold;
   display: block;
-  margin: auto;
+  margin: 3rem auto;
   background-color: #fff;
   border: 3px solid #fc3357;
   width: 200px;
@@ -175,23 +172,67 @@ button:hover {
   font-weight: bold;
 }
 
+.hero {
+  margin: 3rem;
+}
+span {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
 /* projects */
-section {
-  margin-top: 10vh;
-}
-.container-projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.proj {
-  width: 48%;
-  padding-bottom: 48%; /* Same as width, sets height */
-  margin-bottom: 2%; /* (100-32*3)/2 */
+.container-img {
   position: relative;
+  width: 100%;
+  margin: 0;
+  line-height: 0;
+}
 
-  background: dodgerblue;
-  border-radius: 5px;
-  opacity: 0.7;
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+img #projects .column {
+  background-image: cover;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+section {
+  width: 100vw;
+}
+img.centered {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+/* Media query */
+@media screen and (max-width: 600px) {
+  .row {
+    flex-flow: column nowrap;
+  }
+
+  .column {
+    flex: 1 1 100%;
+    align-items: center;
+    flex-flow: column-reverse;
+  }
+  section {
+    width: 100vw;
+    text-align: center;
+    margin: 8rem 0.75rem;
+  }
+
+  #profile-pic {
+    display: none;
+  }
 }
