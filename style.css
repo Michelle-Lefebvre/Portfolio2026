@@ -1,11 +1,11 @@
 :root {
-  --color-bg-primary: #0a090a;
-  /* --color-bg-primary: #565360; */
-  /* --color-bg-secondary: #908e9b; */
-  --color-accent: #fc3357;
-  --color-text: #fae8e8;
-  --color-white: #fff;
-  --space-xs: 0.25rem; /* 8px */
+  --color-bg-primary: #0f172a;
+  --color-bg-secondary: #003;
+  --color-accent: #e2e8f0;
+  --color-text-title: #e2e8f0;
+  --color-text: #7e8b9e;
+
+  --space-xs: 0.25rem; /* 4px */
   --space-sm: 0.5rem; /* 8px */
   --space-sim: 0.75rem; /* 12px */
   --space-md: 1rem; /* 16px */
@@ -15,18 +15,25 @@
   --space-xxl: 3rem; /* 48 */
   --space-xxxl: 4rem; /* 64px */
 }
+
 /* TEXT SIZES */
 h1 {
   margin: 0;
   font-size: var(--space-xxl);
+  color: var(--color-text-title);
 }
 h2 .subtitle {
   font-size: var(--space-mid);
+  color: var(--color-text-title);
 }
 body {
   font-family: "Montserrat", sans-serif;
   padding: 48px 24px;
-  background: linear-gradient(to right, #120404 0%, #220606 100%);
+  background: linear-gradient(
+    to right,
+    var(--color-bg-primary) 0%,
+    var(--color-bg-secondary) 100%
+  );
   color: var(--color-text);
 }
 
@@ -105,15 +112,13 @@ button:hover {
 /* Media Query for Desktop (screens wider than, for example, 768px) */
 @media (min-width: 768px) {
   .fixed-lt {
-    width: 300px; /* Set a fixed or percentage width for the sidebar on desktop */
-    position: sticky; /* The magic property */
-    top: 0; /* Tells it to stick to the top of the viewport when it reaches this point */
-    height: fit-content; /* Ensures it stops at the end of its parent container rather than scrolling indefinitely */
-    /* Add -webkit-position: sticky; for Safari compatibility */
+    width: 300px;
+    position: sticky;
+    top: 0;
+    height: fit-content;
     -webkit-position: sticky;
   }
 }
-
 p {
   font-size: var(--space-md);
 }
