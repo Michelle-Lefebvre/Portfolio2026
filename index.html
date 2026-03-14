@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MML</title>
+    <title>Building... [Michelle M. Lefebvre]</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FONTS -->
+    <!-- font Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,120 +15,103 @@
 </head>
 
 <body>
-    <!-- NAVIGATION -->
-    <nav>
-        <!-- <div class="nav-container"> -->
-        <a href="#home" class="nav-item">
-            <img src="images/MMLlogo.png" alt="MML logo" width="50" />
-        </a>
-        <a href="index-projects.html" class="nav-item">Projects</a>
-        <p class="nav-item nav-name">Michelle Lefebvre</p>
-        <a href="#experience" class="nav-item">Work</a>
-        <a href="#about" class="nav-item">About</a>
-        <!-- </div> -->
-    </nav>
-
-    <!-- HOME -->
     <section id="home">
-
-        <!-- DARK MODE TOGGLE -->
-        <button class="dark-mode" onclick="myFunction()">Toggle dark mode</button>
-
-        <!-- HERO -->
         <div class="row">
-            <div class="column">
-                <img src="images/MML-Tilt.png" id="profile-pic" class="centered"
-                    alt="photo of Michelle Lefebvre looking at the camera and smiling">
+            <div class="column fixed-col">
+                <div class="fixed-lt">
+                    <h1>Michelle Lefebvre</h1>
+                    <h2>Frontend Developer</h2>
+                    <p>I build accessible, pixel-perfect digital experiences for the web.</p>
+                    <button>Get in Touch</button>
+                    <nav>
+                        <a href="#top" class="active">Structural Integrity</a>
+                        <a href="#work">Work</a>
+                        <a href="#project">Projects</a>
+                    </nav>
+                </div>
             </div>
             <div class="column">
-                <h1 class="slide-text title-text">
-                    Michelle
-                </h1>
-                <h2 class="slide-text-right title-text">
-                    Lefebvre
-                </h2>
-                <button>Get in Touch</button>
-                <p class="hero"><span>Senior Frontend Developer (Fullstack)</span> | React, TypeScript & A11Y | 7+ Years
-                    Exp
-                    (Enterprise &
-                    Startups) | Architectural Mindset | <span>open to new opportunities!</span></p>
+                <!-- ABOUT -->
+                <section id="#top">
+                    <p class="subtitle">Front-End Developer | Systems Architect | React & A11Y Specialist
+                        Montreal, QC | Secret Security Clearance (Level II)</p>
+
+                    <p class="about-titles">The Blueprint</p>
+                    <p>I build for the web with the mindset of an architect—literally. Before transitioning into
+                        software, I spent
+                        my career in <span>commercial architecture and engineering as a CAD Manager</span>. That
+                        background
+                        ingrained in me a "measure twice, cut once" philosophy and a deep respect for how complex
+                        systems fit
+                        together.
+                    </p>
+                    <p>
+                        Today, I apply that same structural precision to the digital world. Based in Montreal, I
+                        specialize in
+                        <span>React,
+                            JavaScript, and A11Y</span>, building robust, inclusive interfaces that are as functional as
+                        they are
+                        beautiful.
+                    </p>
+                    <p class="about-titles">The Impact</p>
+                    <p>
+                        I’m at my best when code meets scale and human complexity. Whether I’m architecting React
+                        mono-repos for
+                        <span>22 million users at HMH</span> or pioneering AR experiments at <span>Valtech</span>, my
+                        focus is on
+                        building "digital infrastructure" that lasts. I don’t just write components; I build systems
+                        that are
+                        accessible to everyone and documented so clearly that anyone can step in and lead.
+                    </p>
+                    <p class="about-titles">Why I’m Different</p>
+                    <ul>
+                        <li><span>The Architectural Edge: </span>I treat codebases like blueprints—modular, scalable,
+                            and
+                            meticulously structured. I’m the developer who speaks the language of both design and
+                            engineering.</li>
+
+                        <li><span>Scale & Security: </span>7+ years of dev experience combined with a Secret Security
+                            Clearance
+                            (Level II). I’m trusted with the high-stakes stuff.</li>
+
+                        <li><span>Fearless Problem Solving: </span>I live for the "impossible" tasks. At Valtech, I
+                            pioneered a way
+                            to inject HTML/CSS directly into an AR environment (PlayCanvas/8th Wall)—a feat that hadn't
+                            been done
+                            before. This allowed for seamless in-app purchasing, keeping users immersed instead of
+                            redirecting them
+                            away.</li>
+
+                        <li><span>Community Advocacy: </span>
+                            I’m a long-time mentor for <span>Canada Learning Code</span> and <span>Girls Learning
+                                Code</span>, and I
+                            was a featured speaker for <span>Valtech’s International Women’s Day</span> celebration.
+                        </li>
+
+                        <li><span>Award-Winning Logic: </span>
+                            Took home <span>3rd Place Worldwide</span> (plus two sponsor prizes) in the
+                            <span>freeCodeCamp JAMstack
+                                Hackathon</span> for building a React-based dog adoption app in just 24 hours.
+                        </li>
+                    </ul>
+
+                    <p><span class="about-titles">Technical Toolkit</span></p>
+
+                    <p><span class="about-titles">Core: </span>React, TypeScript, JavaScript (ES6+), Node.js,
+                        HTML5/CSS3.
+                    </p>
+
+                    <p><span class="about-titles">Styles & UI: </span>MUI, Tailwind CSS, Styled Components, Storybook,
+                        Figma.
+                    </p>
+
+                    <p><span class="about-titles">The Rest: </span>A11Y Standards, Jest, RTL, Contentful, Git, Docker.
+                    </p>
+
+                </section>
             </div>
         </div>
     </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-        <p class="title-text">Projects</p>
-        <div class="row">
-            <div class="column">
-                <img src="images/e-bikeQRcode.png" alt="QR code for e-bike project" class="centered">
-            </div>
-            <div class="column">
-                <img src="images/cubeJitters.png" alt="cube jitters project" class="centered">
-            </div>
-        </div>
-        <div class="row">
-            <div class="column">
-                <img src="images/cubeMadScience.png" alt="cube mad science project" class="centered">
-            </div>
-            <div class="column">
-                <img src="images/cubeDoggieMatch.png" alt="project 4" class="centered">
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- WORKING -->
-    <section id="experience">
-        <div class="row">
-            <div class="column">
-
-            </div>
-            <div class="column">
-                <h4 class="title-text">Working</h4>
-                <a href="https://www.linkedin.com/in/michellelefebvre1/">
-                    <img src="images/linkedin.png" alt="linkedin" width="38" height="38" class=" social"
-                        title="LinkedIn">
-                </a>
-                <a href="https://github.com/Michelle-Lefebvre">
-                    <img src="images/github.png" alt="github icon" width="38" height="38" class="social"
-                        title="GitHub"></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-        <h4 class="title-text">About</h4>
-    </section>
-
-    <!-- TOGGLE DARK MODE -->
-    <script>
-        function myFunction() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-        }
-    </script>
 </body>
 
 </html>

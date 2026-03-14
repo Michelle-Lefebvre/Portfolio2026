@@ -10,12 +10,18 @@ body {
   font-family: "Open Sans", sans-serif;
   height: 80vh;
 }
-/* section#projects {
+img.prj-slide-lt {
+  width: 150px;
+  height: 150px;
+  margin: 26px 0 0;
+}
+/* section#projects-slider {
   display: flex;
   width: 90vw;
   height: 90vh;
   margin: auto;
 }
+
 
 img {
   width: 100%;
@@ -49,7 +55,6 @@ img {
 .left-slide h1 {
   font-size: 40px;
   margin-bottom: 10px;
-  margin-top: -30px;
   transition: transform 0.5s ease-in-out;
 }
 
