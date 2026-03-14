@@ -8,9 +8,19 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  height: 100vh;
+  height: 80vh;
+}
+/* section#projects {
+  display: flex;
+  width: 90vw;
+  height: 90vh;
+  margin: auto;
 }
 
+img {
+  width: 100%;
+  height: auto;
+} */
 .slider-container {
   position: relative;
   overflow: hidden;
@@ -43,6 +53,11 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
+.qr-code {
+  width: 150px;
+  height: 150px;
+  margin-top: 20px;
+}
 .right-slide {
   height: 100%;
   position: absolute;
