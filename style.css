@@ -122,7 +122,6 @@ button:hover {
 /* Media Query for Desktop (screens wider than, for example, 768px) */
 @media (min-width: 768px) {
   .fixed-lt {
-    width: 300px;
     position: sticky;
     top: 0;
     height: fit-content;
@@ -148,10 +147,11 @@ section {
   margin-bottom: 10%;
 }
 .card {
-  display: flex;
-  /* flex-wrap: wrap; */
-  gap: 20px;
-  padding: 12px;
+  flex-grow: 1;
+  flex-basis: 300px;
+  min-width: 280px;
+  max-width: 600px;
+  padding: 20px;
 }
 .card:hover {
   background: var(--color-hover);
@@ -162,7 +162,7 @@ section {
 }
 .card-years {
   flex: 1;
-  /* min-width: 75px; */
+  min-width: 80px;
   width: 29vw;
   padding: 10px 0;
   box-sizing: border-box;
@@ -194,27 +194,37 @@ p {
 ul.card {
   margin-left: 12px;
 }
+ul.card-details {
+  max-width: 50%;
+}
+li {
+  font-size: 13px;
+}
 .pill span {
-  background-color: var(--color-hover-pill); /* Light gray background */
-  color: var(--color-accent-primary); /* Text color */
-  padding: 5px 12px; /* Spacing inside the pill */
-  margin: 3px; /* Space between pills */
-  border-radius: 50px; /* Makes it a pill shape */
-  display: inline-flex; /* Allows padding/margin to work */
-  /* font-family: sans-serif; */
-  font-size: 12x;
+  background-color: var(--color-hover-pill);
+  color: var(--color-accent-primary);
+  padding: 5px 12px;
+  margin: 3px;
+  border-radius: 50px;
+  display: inline-flex;
+  font-size: 12px;
   text-transform: capitalize;
+}
+div.pill {
+  width: 50%;
 }
 
 /* Media Query for MOBILE */
 @media (max-width: 598px) {
   .card-details {
     margin-left: 0;
+    width: 100vw;
   }
 
   div.card-years {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
+    width: 100vw;
   }
   p {
     margin: var(--space-sm);
@@ -222,5 +232,12 @@ ul.card {
   .card {
     padding: 0;
     gap: 0;
+    max-width: 100%;
+  }
+  li {
+    width: 80vw;
+  }
+  div.pill {
+    width: 100%;
   }
 }
