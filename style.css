@@ -2,8 +2,11 @@
   --color-bg-primary: #0f172a;
   --color-bg-secondary: #003;
   --color-accent: #e2e8f0;
+  --color-accent-primary: #fc3357;
   --color-text-title: #e2e8f0;
   --color-text: #7e8b9e;
+  --color-hover: rgba(126, 139, 158, 0.1);
+  --color-hover-pill: rgba(126, 139, 158, 0.2);
 
   --space-xs: 0.25rem; /* 4px */
   --space-sm: 0.5rem; /* 8px */
@@ -54,6 +57,7 @@ body {
 .column {
   flex-grow: 1;
   flex-basis: 300px;
+  min-width: 280px;
   max-width: 600px;
   padding: 20px;
 }
@@ -145,39 +149,78 @@ section {
 }
 .card {
   display: flex;
+  /* flex-wrap: wrap; */
   gap: 20px;
-  border: 1px solid var(--color-text);
-  border-radius: 4px;
   padding: 12px;
 }
-
+.card:hover {
+  background: var(--color-hover);
+  border: 1px solid var(--color-hover);
+  .card-job-title {
+    color: var(--color-accent-primary);
+  }
+}
 .card-years {
   flex: 1;
-  width: 30vw;
+  /* min-width: 75px; */
+  width: 29vw;
   padding: 10px 0;
   box-sizing: border-box;
+  text-transform: uppercase;
 }
 
 .card-details {
   flex: 2;
-  width: 70%;
-  padding: 10px;
+  width: 71vw;
+  padding: 10px 0 10px;
   box-sizing: border-box;
 }
 p {
   margin: var(--space-sm) 0;
 }
 .text-years {
-  font-size: small;
-  margin: calc(var(--space-sm) + 8px) 0;
-  padding: 0;
+  font-size: 12px;
 }
 .card-job-title {
   color: var(--color-text-title);
   font-size: var(--space-sim2);
   margin: var(--space-sm) 0;
 }
+
 .card-details {
   font-size: var(--space-sim);
-  margin: 0;
+  padding-left: 12px;
+}
+ul.card {
+  margin-left: 12px;
+}
+.pill span {
+  background-color: var(--color-hover-pill); /* Light gray background */
+  color: var(--color-accent-primary); /* Text color */
+  padding: 5px 12px; /* Spacing inside the pill */
+  margin: 3px; /* Space between pills */
+  border-radius: 50px; /* Makes it a pill shape */
+  display: inline-flex; /* Allows padding/margin to work */
+  /* font-family: sans-serif; */
+  font-size: 12x;
+  text-transform: capitalize;
+}
+
+/* Media Query for MOBILE */
+@media (max-width: 598px) {
+  .card-details {
+    margin-left: 0;
+  }
+
+  div.card-years {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  p {
+    margin: var(--space-sm);
+  }
+  .card {
+    padding: 0;
+    gap: 0;
+  }
 }
