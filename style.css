@@ -67,6 +67,7 @@ body {
 /* NAVIGATION */
 nav {
   width: 100px;
+  margin-bottom: 48px;
 }
 
 nav a {
@@ -74,10 +75,11 @@ nav a {
   display: block;
   padding: 12px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 nav a:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-primary);
   text-decoration: underline;
 }
 
@@ -97,12 +99,14 @@ button {
   color: var(--color-accent);
   padding: 10px 30px;
   background: none;
+  cursor: grab;
 }
 
 button:hover {
   background-color: none;
-  color: var(--color-accent);
+  color: var(--color-accent-primary);
   font-weight: bold;
+  border: 1px solid var(--color-accent-primary);
 }
 
 .container {
@@ -117,6 +121,10 @@ button:hover {
 
 .fixed-lt {
   width: 100%;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Media Query for Desktop (screens wider than, for example, 768px) */
