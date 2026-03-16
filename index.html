@@ -17,6 +17,7 @@
 
 <body>
     <section id="home">
+        <button onclick="lightMode()">Light Mode</button>
         <div class="row">
             <div class="column fixed-col">
                 <div class="fixed-lt">
@@ -62,15 +63,111 @@
                     </p>
                 </section>
 
+                <!--  -->
+                <section id="project">
+                    <!-- Augmented Reality -->
+                    <div id="prj-ar" class="prj-section">
+                        <div class="content">
+                            <p class="prj-text subtitle">AR Commerce: The HTML Injection Breakthrough</p>
+                            <p class="prj-text">Redefining the boundaries of 3D immersive shopping.</p>
+                            <ul class="prj-ul">
+                                <li class="prj-text"><span>The Blueprint:</span> &nbsp;At the time, AR environments
+                                    (PlayCanvas/8th
+                                    Wall) were
+                                    "walled
+                                    gardens." To make a purchase, users were redirected to external websites,
+                                    breaking
+                                    the
+                                    immersion and hurting conversion rates.</li>
+                                <li class="prj-text"><span>The Build: </span>PlayCanvas, 8th Wall, Vanilla
+                                    JavaScript,
+                                    CSS3.
+                                </li>
+                                <li class="prj-text"><span>The Breakthrough: </span> I engineered a method to inject
+                                    a
+                                    responsive HTML/CSS
+                                    layer
+                                    directly into the AR coordinate system—a feat previously considered impossible
+                                    in
+                                    the
+                                    browser. This allowed users to select products and checkout without ever leaving
+                                    the
+                                    AR
+                                    experience, creating a seamless, "future-studio" shopping flow.</li>
+                            </ul>
+                            <p class="pill">
+                                <span>8thWall</span>
+                                <span>PlayCanvas</span>
+                                <span>JavaScript</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>WebAR</span>
+                            </p>
+                            <button id="openBtn">view</button>
+                        </div>
+                    </div>
+
+                    <!-- Native Dialog Modal -->
+                    <dialog id="myModal">
+                        <h2>Augmented Reality</h2>
+                        <img src="images/Collage-AR.png" alt="">
+                        <button id="closeBtn">Close</button>
+                    </dialog>
+                    <!-- JITTERS -->
+                    <div id="prj-jitters" class="prj-section">
+                        <div class="content">
+                            <h1>JITTERS</h1>
+                            <p>The background is blurred, but this text is sharp!</p>
+                            <button id="openBtn">view</button>
+                        </div>
+                    </div>
+
+                    <!-- Native Dialog Modal -->
+                    <dialog id="myModal">
+                        <h2>JITTERS</h2>
+                        <p>Standard modal content here.</p>
+                        <button id="closeBtn">Close</button>
+                    </dialog>
+                    <!-- MAD SCIENCE -->
+                    <div id="prj-madsci" class="prj-section">
+                        <div class="content">
+                            <h1>MAD SCIENCE</h1>
+                            <p>The background is blurred, but this text is sharp!</p>
+                            <button id="openBtn">view</button>
+                        </div>
+                    </div>
+
+                    <!-- Native Dialog Modal -->
+                    <dialog id="myModal">
+                        <h2>MAD SCIENCE</h2>
+                        <p>Standard modal content here.</p>
+                        <button id="closeBtn">Close</button>
+                    </dialog>
+                    <!-- DOGGIE MATCH -->
+                    <div id="prj-doggie" class="prj-section">
+                        <div class="content">
+                            <h1>DOGGIE MATCH</h1>
+                            <p>The background is blurred, but this text is sharp!</p>
+                            <button id="openBtn">view</button>
+                        </div>
+                    </div>
+
+                    <!-- Native Dialog Modal -->
+                    <dialog id="myModal">
+                        <h2>DOGGIE MATCH</h2>
+                        <p>Standard modal content here.</p>
+                        <button id="closeBtn">Close</button>
+                    </dialog>
+
+                </section>
                 <!-- WORK -->
                 <section id="work">
-
                     <div class="column card">
-                        <div class="card-years text-years">
-                            <p>2022 - 2024</p>
-                        </div>
+
                         <div class="card-details">
                             <p class="card-job-title">Associate Software Developer | HMH</p>
+                            <p class="text-years">2022 - 2024</p>
+
                             <ul class="card-details" aria-label="job details">
                                 <li>Developed and maintained a scalable <span>React mono-repo</span> reporting platform
                                     serving over <span>22 million users</span> in the educational sector.</li>
@@ -115,11 +212,9 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-years text-years">
-                            <p>2020 - 2022</p>
-                        </div>
                         <div class="card-details">
                             <p class="card-job-title">Frontend Developer | Valtech</p>
+                            <p class="text-years">2020 - 2022</p>
                             <ul class="card-details" aria-label="job details">
                                 <li><span>Innovation: </span>Pioneered an AR Proof-of-Concept for Future Studios using
                                     <span>PlayCanvas</span> and <span>8th Wall</span>, successfully injecting HTML/CSS
@@ -154,10 +249,11 @@
                                 <span>Stripe</span>
                                 <span>Jira</span>
                                 <span>Agile</span>
-                                <span>SourceTree</span>
                                 <span>GitHub</span>
+                                <span>SourceTree</span>
                                 <span>GDPR</span>
                                 <span>Accessibility</span>
+                                <span>Documentation</span>
                                 <span>Sitecore</span>
                                 <span>TypeScript</span>
                                 <span>Terminal</span>
@@ -172,11 +268,9 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-years text-years">
-                            <p>2017 - 2002</p>
-                        </div>
                         <div class="card-details">
                             <p class="card-job-title">Independent Front-End Consultant | MML Designs</p>
+                            <p class="text-years">2017 - 2002</p>
                             <ul class="card-details" aria-label="job details">
                                 <li><span>Client: Reitmans: </span>Assisted the personalization team in a fast-paced
                                     sprint environment. Developed front-end interfaces for user profiles and secure
@@ -197,6 +291,7 @@
                                 <span>GitHub</span>
                                 <span>AdobeXD</span>
                                 <span>Design</span>
+                                <span>Documentation</span>
                                 <span>client coordination</span>
                                 <span>project management</span>
                                 <span>Netlify</span>
@@ -310,6 +405,35 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function lightMode() {
+            var element = document.body;
+            element.classList.toggle("light-mode");
+        }
+
+        // Modal
+        const modal = document.getElementById("myModal")
+        const openBtn = document.getElementById("openBtn")
+        const closeBtn = document.getElementById("closeBtn")
+
+        // Open as a modal
+        openBtn.addEventListener("click", () => {
+            modal.showModal()
+        })
+
+        // Close modal
+        closeBtn.addEventListener("click", () => {
+            modal.close()
+        })
+
+        // Optional: Close when clicking the backdrop (outside the modal box)
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.close()
+            }
+        })
+    </script>
 </body>
 
 </html>
