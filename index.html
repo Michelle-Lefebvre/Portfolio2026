@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/MMLlogo.png" type="image/x-icon">
     <title>Building... Michelle Lefebvre</title>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <!-- font Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,11 +14,37 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 
 <body>
     <section id="home">
-        <button onclick="lightMode()">Light Mode</button>
+        <nav>
+            <button onclick="toggleDarkMode()" id="toggle">
+                <svg width="30" height="30" id="light-icon">
+                    <circle cx="15" cy="15" r="6" fill="currentColor" />
+
+                    <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15"
+                        y2="4"></line>
+
+                    <use href="#ray" transform="rotate(45 15 15)" />
+                    <use href="#ray" transform="rotate(90 15 15)" />
+                    <use href="#ray" transform="rotate(135 15 15)" />
+                    <use href="#ray" transform="rotate(180 15 15)" />
+                    <use href="#ray" transform="rotate(225 15 15)" />
+                    <use href="#ray" transform="rotate(270 15 15)" />
+                    <use href="#ray" transform="rotate(315 15 15)" />
+                </svg>
+                <svg width="30" height="30" id="dark-icon">
+                    <path fill="currentColor" d="
+      M 23, 5
+      A 12 12 0 1 0 23, 25
+      A 12 12 0 0 1 23, 5" />
+                </svg>
+            </button>
+        </nav>
+        <!-- TOGGLE LIGHT/DARK MODE -->
         <div class="row">
             <div class="column fixed-col">
                 <div class="fixed-lt">
@@ -79,10 +106,6 @@
                                     breaking
                                     the
                                     immersion and hurting conversion rates.</li>
-                                <li class="prj-text"><span>The Build: </span>PlayCanvas, 8th Wall, Vanilla
-                                    JavaScript,
-                                    CSS3.
-                                </li>
                                 <li class="prj-text"><span>The Breakthrough: </span> I engineered a method to inject
                                     a
                                     responsive HTML/CSS
@@ -95,6 +118,7 @@
                                     AR
                                     experience, creating a seamless, "future-studio" shopping flow.</li>
                             </ul>
+                            <button id="openBtn" class="btn-open">view</button>
                             <p class="pill">
                                 <span>8thWall</span>
                                 <span>PlayCanvas</span>
@@ -103,31 +127,31 @@
                                 <span>CSS</span>
                                 <span>WebAR</span>
                             </p>
-                            <button id="openBtn">view</button>
+
                         </div>
                     </div>
-
-                    <!-- Native Dialog Modal -->
-                    <dialog id="myModal">
+                    <!-- MODAL -->
+                    <dialog class="prj-modal">
                         <h2>Augmented Reality</h2>
                         <img src="images/Collage-AR.png" alt="">
-                        <button id="closeBtn">Close</button>
+                        <button id="closeBtn" class="btn-open">Close</button>
                     </dialog>
                     <!-- JITTERS -->
                     <div id="prj-jitters" class="prj-section">
                         <div class="content">
                             <h1>JITTERS</h1>
                             <p>The background is blurred, but this text is sharp!</p>
-                            <button id="openBtn">view</button>
+                            <button id="openBtn" class="btn-prj">view</button>
                         </div>
                     </div>
 
                     <!-- Native Dialog Modal -->
-                    <dialog id="myModal">
+                    <dialog class="prj-modal">
                         <h2>JITTERS</h2>
-                        <p>Standard modal content here.</p>
-                        <button id="closeBtn">Close</button>
+                        <img src="images/collage-Jitters.png" alt="">
+                        <button id="closeBtn" class="btn-open">Close</button>
                     </dialog>
+
                     <!-- MAD SCIENCE -->
                     <div id="prj-madsci" class="prj-section">
                         <div class="content">
@@ -138,11 +162,12 @@
                     </div>
 
                     <!-- Native Dialog Modal -->
-                    <dialog id="myModal">
+                    <dialog class="prj-modal">
                         <h2>MAD SCIENCE</h2>
-                        <p>Standard modal content here.</p>
-                        <button id="closeBtn">Close</button>
+                        <img src="images/Collage_MadScience.jpg" alt="">
+                        <button id="closeBtn" class="btn-open">Close</button>
                     </dialog>
+
                     <!-- DOGGIE MATCH -->
                     <div id="prj-doggie" class="prj-section">
                         <div class="content">
@@ -153,10 +178,10 @@
                     </div>
 
                     <!-- Native Dialog Modal -->
-                    <dialog id="myModal">
+                    <dialog class="prj-modal">
                         <h2>DOGGIE MATCH</h2>
-                        <p>Standard modal content here.</p>
-                        <button id="closeBtn">Close</button>
+                        <img src="images/Collage_DoogieMatch.png" alt="">
+                        <button id="closeBtn" class="btn-open">Close</button>
                     </dialog>
 
                 </section>
@@ -204,8 +229,9 @@
                                 <span>documentation</span>
                                 <span>Node.js</span>
                                 <span>Typescript</span>
+                                <span>OpenVPN</span>
                                 <span>Docker</span>
-
+                                <span>Jenkins</span>
                                 <span>HTML</span>
                                 <span>CSS</span>
                             </div>
@@ -406,34 +432,7 @@
         </div>
     </section>
 
-    <script>
-        function lightMode() {
-            var element = document.body;
-            element.classList.toggle("light-mode");
-        }
-
-        // Modal
-        const modal = document.getElementById("myModal")
-        const openBtn = document.getElementById("openBtn")
-        const closeBtn = document.getElementById("closeBtn")
-
-        // Open as a modal
-        openBtn.addEventListener("click", () => {
-            modal.showModal()
-        })
-
-        // Close modal
-        closeBtn.addEventListener("click", () => {
-            modal.close()
-        })
-
-        // Optional: Close when clicking the backdrop (outside the modal box)
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.close()
-            }
-        })
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
