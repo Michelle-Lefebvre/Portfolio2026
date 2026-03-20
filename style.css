@@ -89,7 +89,14 @@ h2 {
 .fixed-col {
   position: relative;
 }
-
+header {
+  top: 0;
+  z-index: 2000;
+  margin-bottom: 3rem;
+  position: -webkit-sticky;
+  position: sticky;
+  text-align: center;
+}
 /* NAVIGATION */
 nav {
   width: 100px;
@@ -142,16 +149,6 @@ button#toggle {
   padding: 5px;
   /* border: 1px solid var(--color-accent);
   border-radius: 50%; */
-}
-
-.container {
-  display: flex; /* Creates the two-column layout on all screen sizes */
-  position: relative; /* Essential for sticky positioning to work correctly within the parent container */
-}
-
-.sidebar {
-  /* Initial styles for mobile (will stack) */
-  width: 100%;
 }
 
 .fixed-lt {
@@ -283,16 +280,16 @@ div.pill {
   color: white;
   margin: 3rem 0;
 }
-#prj-ar.prj-section::before {
+.prj-ar.prj-section::before {
   background-image: url("images/E-bikeAR.png");
 }
-#prj-jitters.prj-section::before {
+.prj-jitters.prj-section::before {
   background-image: url("images/cubeJitters.png");
 }
-#prj-madsci.prj-section::before {
+.prj-madsci.prj-section::before {
   background-image: url("images/cubeMadScience.png");
 }
-#prj-doggie.prj-section::before {
+.prj-doggie.prj-section::before {
   background-image: url("images/cubeDoggieMatch.png");
 }
 /* The Background Layer */
@@ -306,15 +303,15 @@ div.pill {
 
   background-size: cover;
   background-position: center;
-  filter: blur(8px); /* Apply blur only to this layer */
-  z-index: -1; /* Move behind the text */
+  filter: blur(8px);
+  z-index: -1;
   transform: scale(1.1); /* Slight scale to hide un-blurred edges */
 }
 
 .content {
   text-align: center;
   color: white;
-  background: rgba(0, 0, 0, 0.4); /* Optional dark overlay for legibility */
+  background: rgba(0, 0, 0, 0.4);
   padding: 0px;
   border-radius: 4px;
   font-size: 12px;
@@ -334,15 +331,63 @@ p.subtitle {
 }
 
 /* Modal Backdrop (Overlay when modal is open) */
+dialog {
+  animation: fade-out 0.7s ease-out;
+}
+
+dialog:open {
+  animation: fade-in 0.7s ease-out;
+}
+
+dialog:open::backdrop {
+  background-color: black;
+  animation: backdrop-fade-in 0.7s ease-out forwards;
+}
+
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(4px); /* Additional blur on page when modal opens */
 }
 
-/* PROJECTS  MODALS */
-/* Container for the background and text */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    display: none;
+  }
 
-/* BLURRED IMAGE */
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+    display: block;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+    display: block;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+    display: none;
+  }
+}
+
+@keyframes backdrop-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.25;
+  }
+}
+
+/* PROJECTS  MODALS */
 .background-image {
   position: absolute;
   top: 0;
@@ -353,7 +398,6 @@ dialog::backdrop {
   z-index: -1;
 }
 
-/* Modal styling with glassmorphism */
 dialog {
   border: none;
   border-radius: 12px;
@@ -365,4 +409,10 @@ dialog {
 
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.5);
+}
+
+.closeBtn {
+  margin: auto 0 auto auto;
+  border: none;
+  font-size: x-large;
 }

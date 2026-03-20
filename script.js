@@ -4,23 +4,22 @@ function toggleDarkMode() {
 }
 
 // Modal
-const modal = document.getElementsByClassName("prj-modal")
-const openBtn = document.getElementById("openBtn")
-const closeBtn = document.getElementById("closeBtn")
+const showButtons = document.querySelectorAll(".show")
 
-// Open as a modal
-openBtn.addEventListener("click", () => {
-  modal.showModal()
+showButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // Find the dialog immediately following this button
+    const modal = btn.nextElementSibling
+    modal.showModal()
+  })
 })
 
-// Close modal
-closeBtn.addEventListener("click", () => {
-  modal.close()
-})
+// Select all close buttons
+const closeButtons = document.querySelectorAll(".close")
 
-// Optional: Close when clicking the backdrop (outside the modal box)
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.close()
-  }
+closeButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // Find the closest parent dialog
+    btn.closest("dialog").close()
+  })
 })

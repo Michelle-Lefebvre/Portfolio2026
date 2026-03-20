@@ -20,7 +20,8 @@
 
 <body>
     <section id="home">
-        <nav>
+        <!-- TOGGLE DARK MODE -->
+        <header>
             <button onclick="toggleDarkMode()" id="toggle">
                 <svg width="30" height="30" id="light-icon">
                     <circle cx="15" cy="15" r="6" fill="currentColor" />
@@ -43,8 +44,8 @@
       A 12 12 0 0 1 23, 5" />
                 </svg>
             </button>
-        </nav>
-        <!-- TOGGLE LIGHT/DARK MODE -->
+        </header>
+
         <div class="row">
             <div class="column fixed-col">
                 <div class="fixed-lt">
@@ -93,7 +94,7 @@
                 <!--  -->
                 <section id="project">
                     <!-- Augmented Reality -->
-                    <div id="prj-ar" class="prj-section">
+                    <div class="prj-section prj-ar">
                         <div class="content">
                             <p class="prj-text subtitle">AR Commerce: The HTML Injection Breakthrough</p>
                             <p class="prj-text">Redefining the boundaries of 3D immersive shopping.</p>
@@ -118,7 +119,7 @@
                                     AR
                                     experience, creating a seamless, "future-studio" shopping flow.</li>
                             </ul>
-                            <button id="openBtn" class="btn-open">view</button>
+                            <button onclick="modalAr.showModal()" class="openBtn btn-open">view</button>
                             <p class="pill">
                                 <span>8thWall</span>
                                 <span>PlayCanvas</span>
@@ -131,57 +132,60 @@
                         </div>
                     </div>
                     <!-- MODAL -->
-                    <dialog class="prj-modal">
-                        <h2>Augmented Reality</h2>
-                        <img src="images/Collage-AR.png" alt="">
-                        <button id="closeBtn" class="btn-open">Close</button>
+                    <dialog id="modalAr" class="prj-modal">
+                        <button onclick="modalAr.close()" class="closeBtn btn-open">X</button>
+
+                        <img src="images/Collage-AR.png" alt="" style="background-image: cover
+                        ;">
+                        <button onclick="modalAr.close()" class="closeBtn btn-open">Close</button>
                     </dialog>
+
                     <!-- JITTERS -->
-                    <div id="prj-jitters" class="prj-section">
+                    <div class="prj-section prj-jitters">
                         <div class="content">
                             <h1>JITTERS</h1>
                             <p>The background is blurred, but this text is sharp!</p>
-                            <button id="openBtn" class="btn-prj">view</button>
+                            <button onclick="modalJitters.showModal()" class="openBtn btn-prj">view</button>
                         </div>
                     </div>
 
                     <!-- Native Dialog Modal -->
-                    <dialog class="prj-modal">
+                    <dialog id="modalJitters" class="prj-modal">
                         <h2>JITTERS</h2>
                         <img src="images/collage-Jitters.png" alt="">
-                        <button id="closeBtn" class="btn-open">Close</button>
+                        <button onclick="modalJitters.close()" class="closeBtn btn-open">Close</button>
                     </dialog>
 
                     <!-- MAD SCIENCE -->
-                    <div id="prj-madsci" class="prj-section">
+                    <div class="prj-section prj-madsci">
                         <div class="content">
                             <h1>MAD SCIENCE</h1>
                             <p>The background is blurred, but this text is sharp!</p>
-                            <button id="openBtn">view</button>
+                            <button onclick="modalMadSci.showModal()" class="openBtn">view</button>
                         </div>
                     </div>
 
                     <!-- Native Dialog Modal -->
-                    <dialog class="prj-modal">
+                    <dialog id="modalMadSci" class="prj-modal">
                         <h2>MAD SCIENCE</h2>
                         <img src="images/Collage_MadScience.jpg" alt="">
-                        <button id="closeBtn" class="btn-open">Close</button>
+                        <button onclick="modalMadSci.close()" class="closeBtn btn-open">Close</button>
                     </dialog>
 
                     <!-- DOGGIE MATCH -->
-                    <div id="prj-doggie" class="prj-section">
+                    <div class="prj-section prj-doggie">
                         <div class="content">
                             <h1>DOGGIE MATCH</h1>
                             <p>The background is blurred, but this text is sharp!</p>
-                            <button id="openBtn">view</button>
+                            <button onclick="modalDog.showModal()" class="openBtn">view</button>
                         </div>
                     </div>
 
                     <!-- Native Dialog Modal -->
-                    <dialog class="prj-modal">
+                    <dialog id="modalDog" class="prj-modal">
                         <h2>DOGGIE MATCH</h2>
                         <img src="images/Collage_DoogieMatch.png" alt="">
-                        <button id="closeBtn" class="btn-open">Close</button>
+                        <button onclick="modalDog.close()" class="closeBtn btn-open">Close</button>
                     </dialog>
 
                 </section>
