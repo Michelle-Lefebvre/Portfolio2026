@@ -14,6 +14,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <!-- close button in modal -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bigelow+Rules&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <!-- font awesome icon -->
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
@@ -50,7 +54,7 @@
             <div class="column fixed-col">
                 <div class="fixed-lt">
                     <h1>Michelle Lefebvre</h1>
-                    <h2 class="subtitle">Frontend Developer</h2>
+                    <h2 class="subtitle">Frontend Fullstack Developer</h2>
                     <p>I build accessible, pixel-perfect digital experiences for the web.</p>
                     <p>Looking for my next coup de cœur</p>
                     <p>Searching for a cool crew.</p>
@@ -61,7 +65,7 @@
                         <a href="#about" class="active">Integrity</a>
                     </nav>
                     <div class="social">
-                        <a href="https://www.linkedin.com/in/michellelefebvre1/">
+                        <a href="https://www.linkedin.com/in/michellelefebvre1/" class="social">
                             <img src="images/linkedin.png" alt="linkedin" width="38" class=".social" title="LinkedIn">
                         </a>
                         <a href="https://github.com/Michelle-Lefebvre">
@@ -72,23 +76,81 @@
                 </div>
             </div>
             <div class="column">
-                <!-- HERO -->
-                <section id="top">
-                    <p class="subtitle">Building digital spaces with an architect’s eye.</p>
+                <!-- ABOUT -->
+                <section id="about">
+                    <p class="subtitle">Front-End Fullstack Developer | React & A11Y Specialist
+                        Montreal, QC | Secret Security Clearance (Level II)</p>
 
-                    <p>I’m Michelle, a Montreal-based Front-End Developer with a secret weapon: a previous career as a
-                        <span>CAD Manager in commercial architecture</span>.
+                    <p class="about-titles">The Blueprint</p>
+                    <p>I build for the web with the mindset of an architect—literally. Before transitioning into
+                        software, I spent
+                        my career in <span>commercial architecture and engineering as a CAD Manager</span>. That
+                        background
+                        ingrained in me a "measure twice, cut once" philosophy and a deep respect for how complex
+                        systems fit
+                        together.
                     </p>
-                    <p>I don’t just write code; I build digital infrastructure.</p>
+                    <p>
+                        Today, I apply that same structural precision to the digital world. Based in Montreal, I
+                        specialize in
+                        <span>React,
+                            JavaScript, and A11Y</span>, building robust, inclusive interfaces that are as functional as
+                        they are
+                        beautiful.
+                    </p>
+                    <p class="about-titles">The Impact</p>
+                    <p>
+                        I’m at my best when code meets scale and human complexity. Whether I’m architecting React
+                        mono-repos for
+                        <span>22 million users at HMH</span> or pioneering AR experiments at <span>Valtech</span>, my
+                        focus is on
+                        building "digital infrastructure" that lasts. I don’t just write components; I build systems
+                        that are
+                        accessible to everyone and documented so clearly that anyone can step in and lead.
+                    </p>
+                    <p class="about-titles">Why I’m Different</p>
                     <ul>
-                        <li><span>Scale: </span>Crafting React platforms for <span>22 million users </span>at HMH.</li>
-                        <li><span>Innovation: </span>Pioneered the first-ever HTML/CSS injection in an AR environment at
-                            Valtech to enable in-app purchases.</li>
-                        <li><span>Integrity: </span> 7+ years of experience, <span>Security Clearance</span>, and a 3rd
-                            place global hackathon win.</li>
+                        <li><span>The Architectural Edge: </span>I treat codebases like blueprints—modular, scalable,
+                            and
+                            meticulously structured. I’m the developer who speaks the language of both design and
+                            engineering.</li>
+
+                        <li><span>Scale & Security: </span>7+ years of dev experience combined with a Secret Security
+                            Clearance
+                            (Level II). I’m trusted with the high-stakes stuff.</li>
+
+                        <li><span>Fearless Problem Solving: </span>I live for the "impossible" tasks. At Valtech, I
+                            pioneered a way
+                            to inject HTML/CSS directly into an AR environment (PlayCanvas/8th Wall)—a feat that hadn't
+                            been done
+                            before. This allowed for seamless in-app purchasing, keeping users immersed instead of
+                            redirecting them
+                            away.</li>
+
+                        <li><span>Community Advocacy: </span>
+                            I’m a long-time mentor for <span>Canada Learning Code</span> and <span>Girls Learning
+                                Code</span>, and I
+                            was a featured speaker for <span>Valtech’s International Women’s Day</span> celebration.
+                        </li>
+
+                        <li><span>Award-Winning Logic: </span>
+                            Took home <span>3rd Place Worldwide</span> (plus two sponsor prizes) in the
+                            <span>freeCodeCamp JAMstack
+                                Hackathon</span> for building a React-based dog adoption app in just 24 hours.
+                        </li>
                     </ul>
-                    <p class="about-titles">I bridge the gap between complex blueprints and seamless user experiences.
+
+                    <p><span class="about-titles">Technical Toolkit</span></p>
+
+                    <p><span class="about-titles">Core: </span>React, TypeScript, JavaScript (ES6+), Node.js,
+                        HTML5/CSS3.
                     </p>
+                    <p><span class="about-titles">Styles & UI: </span>MUI, Tailwind CSS, Styled Components, Storybook,
+                        Figma.
+                    </p>
+                    <p><span class="about-titles">The Rest: </span>A11Y Standards, Jest, RTL, Contentful, Git.
+                    </p>
+
                 </section>
 
                 <!--  -->
@@ -132,12 +194,9 @@
                         </div>
                     </div>
                     <!-- MODAL -->
-                    <dialog id="modalAr" class="prj-modal">
+                    <dialog id="modalAr">
                         <button onclick="modalAr.close()" class="closeBtn btn-open">X</button>
-
-                        <img src="images/Collage-AR.png" alt="" style="background-image: cover
-                        ;">
-                        <button onclick="modalAr.close()" class="closeBtn btn-open">Close</button>
+                        <img src="images/Collage-AR.png" alt="" class="prj-modal">
                     </dialog>
 
                     <!-- JITTERS -->
@@ -152,7 +211,7 @@
                     <!-- Native Dialog Modal -->
                     <dialog id="modalJitters" class="prj-modal">
                         <h2>JITTERS</h2>
-                        <img src="images/collage-Jitters.png" alt="">
+                        <img src="images/collage-Jitters.png" alt="" class="prj-modal">
                         <button onclick="modalJitters.close()" class="closeBtn btn-open">Close</button>
                     </dialog>
 
@@ -329,7 +388,8 @@
                             </div>
                         </div>
                     </div>
-                    <button title="Resume in pdf format"><a href="images/Resume-Lefebvre2026.pdf"></a>Full
+                    <button class="resume" title="Resume in pdf format"><a
+                            href="images/Resume-Lefebvre2026.pdf"></a>Full
                         Resume</button>
                     <!-- <div class="card">
                         <div class="card-years text-years">
@@ -356,82 +416,6 @@
                     </div> -->
                 </section>
 
-                <!-- ABOUT -->
-                <section id="#about">
-                    <p class="subtitle">Front-End Developer | React & A11Y Specialist
-                        Montreal, QC | Secret Security Clearance (Level II)</p>
-
-                    <p class="about-titles">The Blueprint</p>
-                    <p>I build for the web with the mindset of an architect—literally. Before transitioning into
-                        software, I spent
-                        my career in <span>commercial architecture and engineering as a CAD Manager</span>. That
-                        background
-                        ingrained in me a "measure twice, cut once" philosophy and a deep respect for how complex
-                        systems fit
-                        together.
-                    </p>
-                    <p>
-                        Today, I apply that same structural precision to the digital world. Based in Montreal, I
-                        specialize in
-                        <span>React,
-                            JavaScript, and A11Y</span>, building robust, inclusive interfaces that are as functional as
-                        they are
-                        beautiful.
-                    </p>
-                    <p class="about-titles">The Impact</p>
-                    <p>
-                        I’m at my best when code meets scale and human complexity. Whether I’m architecting React
-                        mono-repos for
-                        <span>22 million users at HMH</span> or pioneering AR experiments at <span>Valtech</span>, my
-                        focus is on
-                        building "digital infrastructure" that lasts. I don’t just write components; I build systems
-                        that are
-                        accessible to everyone and documented so clearly that anyone can step in and lead.
-                    </p>
-                    <p class="about-titles">Why I’m Different</p>
-                    <ul>
-                        <li><span>The Architectural Edge: </span>I treat codebases like blueprints—modular, scalable,
-                            and
-                            meticulously structured. I’m the developer who speaks the language of both design and
-                            engineering.</li>
-
-                        <li><span>Scale & Security: </span>7+ years of dev experience combined with a Secret Security
-                            Clearance
-                            (Level II). I’m trusted with the high-stakes stuff.</li>
-
-                        <li><span>Fearless Problem Solving: </span>I live for the "impossible" tasks. At Valtech, I
-                            pioneered a way
-                            to inject HTML/CSS directly into an AR environment (PlayCanvas/8th Wall)—a feat that hadn't
-                            been done
-                            before. This allowed for seamless in-app purchasing, keeping users immersed instead of
-                            redirecting them
-                            away.</li>
-
-                        <li><span>Community Advocacy: </span>
-                            I’m a long-time mentor for <span>Canada Learning Code</span> and <span>Girls Learning
-                                Code</span>, and I
-                            was a featured speaker for <span>Valtech’s International Women’s Day</span> celebration.
-                        </li>
-
-                        <li><span>Award-Winning Logic: </span>
-                            Took home <span>3rd Place Worldwide</span> (plus two sponsor prizes) in the
-                            <span>freeCodeCamp JAMstack
-                                Hackathon</span> for building a React-based dog adoption app in just 24 hours.
-                        </li>
-                    </ul>
-
-                    <p><span class="about-titles">Technical Toolkit</span></p>
-
-                    <p><span class="about-titles">Core: </span>React, TypeScript, JavaScript (ES6+), Node.js,
-                        HTML5/CSS3.
-                    </p>
-                    <p><span class="about-titles">Styles & UI: </span>MUI, Tailwind CSS, Styled Components, Storybook,
-                        Figma.
-                    </p>
-                    <p><span class="about-titles">The Rest: </span>A11Y Standards, Jest, RTL, Contentful, Git.
-                    </p>
-
-                </section>
             </div>
         </div>
     </section>
