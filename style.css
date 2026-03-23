@@ -177,6 +177,9 @@ a {
   text-decoration: none;
   margin-right: 3rem;
 }
+.btn-open {
+  margin: 0 auto;
+}
 
 /* Media Query for Desktop (screens wider than, for example, 768px) */
 @media (min-width: 768px) {
@@ -252,7 +255,7 @@ ul.card-details {
   max-width: 50%;
 }
 li {
-  font-size: 13px;
+  font-size: 12px;
 }
 .pill span {
   background-color: var(--color-hover-pill);
@@ -454,9 +457,23 @@ dialog::backdrop {
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
   font-style: normal;
+  width: 50px;
+  padding-right: 0;
 }
 .closeBtn:hover {
   border: none;
+}
+.link-close {
+  display: flex;
+  align-items: center;
+  align-content: space-between;
+}
+a.prj-link {
+  margin: 0;
+}
+.prj-link .closeBtn {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* TO DOs
