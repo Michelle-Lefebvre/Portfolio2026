@@ -205,17 +205,38 @@
                     <!-- JITTERS -->
                     <div class="prj-section prj-jitters">
                         <div class="content">
-                            <p class="subtitle">JITTERS</p>
-                            <p>The background is blurred, but this text is sharp!</p>
-                            <button onclick="modalJitters.showModal()" class="openBtn btn-prj">view</button>
+                            <p class="prj-text subtitle">JITTERS</p>
+                            <p class="prj-text">The background is blurred, but this text is sharp!</p>
+
+                            <ul class="prj-ul">
+                                <li class="prj-text"><span>The Blueprint:</span>
+                                </li>
+                            </ul>
+                            <button onclick="modalJitters.showModal()" class="openBtn btn-prj">see more</button>
+                            <p class="pill">
+                                <span>PHP</span>
+                                <span>Twig</span>
+                                <span>Bootstrap</span>
+                                <span>Slim</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Native Dialog Modal -->
+                    <!-- MODAL JITTER -->
                     <dialog id="modalJitters" class="prj-modal">
-                        <h2>JITTERS</h2>
+
+                        <div class="link-close">
+                            <a href="https://github.com/Michelle-Lefebvre/ProjectJitters" target="_blank"
+                                rel="noopener noreferrer" class="resume prj-link">View Staging Site</a>
+                            <a href="images/JittersPresentation.pdf" target="_blank" rel="noopener noreferrer"
+                                class="resume prj-link">View
+                                Presentation</a>
+                            <button onclick="modalJitters.close()" class="closeBtn btn-open">X</button>
+                        </div>
+
                         <img src="images/collage-Jitters.png" alt="" class="prj-modal">
-                        <button onclick="modalJitters.close()" class="closeBtn btn-open">Close</button>
                     </dialog>
 
                     <!-- MAD SCIENCE -->
@@ -229,9 +250,12 @@
 
                     <!-- Native Dialog Modal -->
                     <dialog id="modalMadSci" class="prj-modal">
-                        <h2>MAD SCIENCE</h2>
+                        <div class="link-close">
+                            <a href="https://madsciencegroup.github.io/MSG_National_NL/public/nl-EN_index.html"
+                                target="_blank" rel="noopener noreferrer" class="resume prj-link">View Staging Site</a>
+                            <button onclick="modalAr.close()" class="closeBtn btn-open">X</button>
+                        </div>
                         <img src="images/Collage_MadScience.jpg" alt="">
-                        <button onclick="modalMadSci.close()" class="closeBtn btn-open">Close</button>
                     </dialog>
 
                     <!-- DOGGIE MATCH -->
