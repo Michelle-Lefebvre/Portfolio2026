@@ -62,7 +62,7 @@ h1 {
   font-size: var(--space-xxl);
   color: var(--color-text-title);
 }
-h2 {
+h2 .card-content {
   font-size: var(--space-mid);
 
   font-weight: 500;
@@ -131,6 +131,7 @@ button {
   padding: 10px 30px;
   background: none;
   cursor: pointer;
+  width: 200px;
 }
 
 button:hover {
@@ -146,6 +147,26 @@ button#toggle {
   cursor: pointer;
   padding: 5px;
   margin-bottom: var(--space-xxl);
+}
+a.resume {
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  margin: 2rem auto;
+  border: 1px solid var(--color-accent);
+  font-size: 14px;
+  color: var(--color-accent);
+  padding: 10px 30px;
+  background: none;
+  font-weight: 600;
+  width: 200px;
+}
+a.resume:hover {
+  background-color: none;
+  color: var(--color-accent-primary);
+  font-weight: bold;
+  border: 1px solid var(--color-accent-primary);
+  cursor: pointer;
 }
 
 .fixed-lt {
@@ -166,7 +187,7 @@ a {
     -webkit-position: sticky;
   }
   .prj-section {
-    height: 60vh;
+    height: 18rem;
   }
 }
 p li {
@@ -203,15 +224,10 @@ section#home {
   border: 1px solid var(--color-hover);
   .card-job-title {
     color: var(--color-accent-primary);
+    font-weight: 500;
   }
 }
 
-/* .card-details {
-  flex: 2;
-  width: 60vw;
-  padding: 10px 0 10px;
-  box-sizing: border-box;
-} */
 p {
   margin: var(--space-sm) 0;
 }
@@ -222,6 +238,7 @@ p {
   color: var(--color-text-title);
   font-size: var(--space-sim2);
   margin: var(--space-sm) 0;
+  font-weight: 600;
 }
 
 .card-details {
@@ -250,6 +267,10 @@ li {
 
 /* Media Query for MOBILE */
 @media (max-width: 598px) {
+  header {
+    margin-bottom: 0;
+    position: relative;
+  }
   .card-details {
     margin-left: 0;
     width: 100vw;
@@ -264,7 +285,10 @@ li {
     max-width: 100%;
   }
   li {
-    width: 80vw;
+    width: 70vw;
+  }
+  .card-job-title {
+    width: 70vw;
   }
   div.pill {
     width: 80%;
@@ -316,7 +340,7 @@ li {
 .content {
   text-align: center;
   color: white;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   padding: 0px;
   border-radius: 4px;
   font-size: 12px;
