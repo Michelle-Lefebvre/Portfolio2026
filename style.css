@@ -8,8 +8,11 @@
 
   --color-hover: rgba(126, 139, 158, 0.1);
   --color-hover-pill: rgba(126, 139, 158, 0.2);
-  --color-hover-pill-modal: rgba(194, 200, 218, 0.2);
+  --color-hover-pill-modal: rgba(118, 134, 167, 0.9);
 
+  --button-padding: 10px var(--space-xl);
+
+  --space-xxs: 0.125rem; /* 2px */
   --space-xs: 0.25rem; /* 4px */
   --space-sm: 0.5rem; /* 8px */
   --space-sim: 0.75rem; /* 12px */
@@ -19,13 +22,13 @@
   --space-mid: 1.25rem; /* 20px */
   --space-lg: 1.5rem; /* 24px */
   --space-xl: 2rem; /* 32px */
-  --space-xxl: 3rem; /* 48 */
+  --space-xxl: 3rem; /* 48ps */
   --space-xxxl: 4rem; /* 64px */
 }
 
 body {
   font-family: "Montserrat", sans-serif;
-  padding: 48px 24px;
+  padding: var(--space-xxl) var(--space-lg);
   background: linear-gradient(
     to right,
     var(--color-bg-primary) 0%,
@@ -55,6 +58,12 @@ body.dark-mode {
   #light-icon {
     display: block;
   }
+  .prj-text.subtitle {
+    color: var(--color-text-title);
+  }
+  p.pill span {
+    background-color: var(--color-bg-secondary);
+  }
 }
 
 /* TEXT SIZES */
@@ -76,7 +85,7 @@ h2 .card-content {
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: var(--space-mid);
   justify-content: center;
 }
 
@@ -85,7 +94,7 @@ h2 .card-content {
   flex-basis: 300px;
   min-width: 280px;
   max-width: 600px;
-  padding: 20px;
+  padding: var(--space-mid);
 }
 .fixed-col {
   position: relative;
@@ -93,7 +102,7 @@ h2 .card-content {
 header {
   top: 0;
   z-index: 2000;
-  margin-bottom: 3rem;
+  margin-bottom: var(--space-xxl);
   position: -webkit-sticky;
   position: sticky;
   text-align: center;
@@ -101,13 +110,13 @@ header {
 /* NAVIGATION */
 nav {
   width: 100px;
-  margin-bottom: 48px;
+  margin-bottom: var(--space-xxl);
 }
 
 nav a {
   color: var(--color-text);
   display: block;
-  padding: 12px;
+  padding: var(--space-sim);
   text-decoration: none;
 }
 
@@ -125,15 +134,14 @@ button {
   text-transform: uppercase;
   font-weight: bold;
   display: block;
-  margin: 2rem auto;
+  margin: var(--space-xl) auto;
   border: 1px solid var(--color-accent);
   border-radius: var(--space-xs);
-  font-size: 14px;
+  font-size: var(--space-sim2);
   color: var(--color-accent);
-  padding: 10px 30px;
+  padding: var(--button-padding);
   background: none;
   cursor: pointer;
-  width: 200px;
 }
 
 button:hover {
@@ -147,19 +155,19 @@ button:hover {
 button#toggle {
   all: unset;
   cursor: pointer;
-  padding: 5px;
+  padding: var(--space-xs);
   margin-bottom: var(--space-xxl);
 }
 a.resume {
   text-transform: uppercase;
   text-align: center;
   display: block;
-  margin: 2rem auto;
+  margin: var(--space-xl) auto;
   border: 1px solid var(--color-accent);
   border-radius: var(--space-xs);
-  font-size: 14px;
+  font-size: var(--space-sim2);
   color: var(--color-accent);
-  padding: 10px 30px;
+  padding: var(--button-padding);
   background: none;
   font-weight: 600;
   width: 200px;
@@ -178,7 +186,7 @@ a.resume:hover {
 
 a {
   text-decoration: none;
-  margin-right: 3rem;
+  margin-right: var(--space-xxl);
 }
 .btn-open {
   margin: 0 auto;
@@ -193,7 +201,7 @@ span {
 }
 .about-titles {
   font-weight: 600;
-  margin-right: 1rem;
+  margin-right: var(--space-md);
 }
 li {
   margin-bottom: var(--space-sm);
@@ -208,15 +216,15 @@ section#home {
 .card .card-details {
   flex-grow: 1;
   flex-basis: 300px;
-  margin: 1rem 0;
+  margin: var(--space-md) 0;
   min-width: 280px;
   max-width: 600px;
-  padding: 20px;
+  padding: var(--space-mid);
 }
 .card:hover {
   background: var(--color-hover);
   border-radius: var(--space-xs);
-  outline: 2px solid var(--color-hover);
+  outline: var(--space-xxs) solid var(--color-hover);
 
   .card-job-title {
     color: var(--color-accent-primary);
@@ -228,7 +236,7 @@ p {
   margin: var(--space-sm) 0;
 }
 .text-years {
-  font-size: 12px;
+  font-size: var(--space-sim);
 }
 .card-job-title {
   color: var(--color-text-title);
@@ -239,29 +247,30 @@ p {
 
 .card-details {
   font-size: var(--space-sim);
-  padding-left: 12px;
+  padding-left: var(--space-sim);
 }
 ul.card {
-  margin-left: 12px;
+  margin-left: var(--space-sim);
 }
 ul.card-details {
   max-width: 50%;
 }
 li {
-  font-size: 12px;
+  font-size: var(--space-sim);
 }
 .pill span {
   background-color: var(--color-hover-pill);
   color: var(--color-accent-primary);
-  padding: 5px 12px;
-  margin: 3px;
-  border-radius: 50px;
+  padding: var(--space-xs) var(--space-sim);
+  margin: var(--space-xs);
+  border-radius: var(--space-xxl);
   display: inline-flex;
-  font-size: 12px;
+  font-size: var(--space-sim);
   text-transform: capitalize;
 }
 p.pill span {
   background-color: var(--color-hover-pill-modal);
+  /* background-color: var(--color-bg-secondary); */
 }
 
 /* PROJECTS */
@@ -272,8 +281,9 @@ p.pill span {
   justify-content: center;
   align-items: center;
   overflow: hidden; /* Prevents blur "bleeding" outside edges */
+  border-radius: var(--space-xs);
   color: white;
-  margin: 3rem 0;
+  margin: var(--space-xxl) 0;
 }
 .prj-ar.prj-section::before {
   background-image: url("images/E-bikeAR.png");
@@ -298,7 +308,7 @@ p.pill span {
 
   background-size: cover;
   background-position: center;
-  filter: blur(8px);
+  filter: blur(var(--space-sm));
   z-index: -1;
   transform: scale(1.1); /* Slight scale to hide un-blurred edges */
 }
@@ -306,14 +316,14 @@ p.pill span {
 .content {
   text-align: center;
   color: white;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 0px;
+  background: rgba(15, 23, 42, 0.7);
+  padding: 0;
   border-radius: var(--space-xs);
-  font-size: 12px;
-  margin: 3rem;
+  font-size: var(--space-sim);
+  margin: var(--space-xxl);
 }
 p.subtitle {
-  font-size: 1rem;
+  font-size: var(--space-md);
   font-weight: 600;
 }
 .prj-ul {
@@ -322,7 +332,7 @@ p.subtitle {
 }
 
 .content.btn-prj {
-  margin: 1rem auto;
+  margin: var(--space-md) auto;
 }
 
 /* Modal Backdrop (Overlay when modal is open) */
@@ -341,7 +351,9 @@ dialog:open::backdrop {
 
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px); /* Additional blur on page when modal opens */
+  backdrop-filter: blur(
+    var(--space-xs)
+  ); /* Additional blur on page when modal opens */
 }
 
 @keyframes fade-in {
@@ -404,10 +416,10 @@ dialog::backdrop {
 
 dialog {
   border: none;
-  padding: 2rem;
+  padding: var(--space-xl);
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px); /* Blurs what's behind the modal */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 var(--space-sm) var(--space-xl) rgba(0, 0, 0, 0.3);
 }
 
 dialog::backdrop {
@@ -421,7 +433,7 @@ dialog::backdrop {
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
   font-style: normal;
-  width: 50px;
+  width: var(--space-xxl);
   padding-right: 0;
 }
 .closeBtn:hover {
@@ -433,10 +445,10 @@ dialog::backdrop {
   align-content: space-between;
 }
 a.prj-link {
-  margin: 0 0 1rem 0;
+  margin: 0 0 var(--space-md) 0;
 }
 a.prj-link:nth-child(2) {
-  margin-left: 1rem;
+  margin-left: var(--space-md);
 }
 .prj-link .closeBtn {
   display: inline-block;
@@ -446,11 +458,11 @@ a.prj-link:nth-child(2) {
   color: var(--color-bg-secondary);
 }
 li {
-  font-size: 14px;
+  font-size: var(--space-sim2);
 }
 li.prj-text {
-  font-size: 12px;
-  padding-right: 1rem;
+  font-size: var(--space-sim);
+  padding-right: var(--space-md);
 }
 
 /* TO DOs
@@ -475,7 +487,6 @@ li.prj-text {
 @media (min-width: 1440px) {
   .prj-section {
     height: 22rem;
-    border-radius: var(--space-xs);
   }
   .fixed-lt {
     position: sticky;
@@ -520,10 +531,13 @@ li.prj-text {
     height: 100vh;
   }
   .link-close {
-    margin: 0 0 1rem;
+    margin: 0 0 var(--space-md);
     width: auto;
   }
   a.prj-link {
     width: auto;
+  }
+  .content {
+    margin: var(--space-md);
   }
 }
