@@ -6,33 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/MMLlogo.png" type="image/x-icon">
     <title>Building... Michelle Lefebvre</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <!-- font Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <!-- close button in modal -->
-    <link
         href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bigelow+Rules&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <!-- font awesome icon -->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 
 <body>
-    <section id="home">
-        <!-- TOGGLE DARK MODE -->
-        <header>
-            <button onclick="toggleDarkMode()" id="toggle">
-                <svg width="30" height="30" id="light-icon">
-                    <circle cx="15" cy="15" r="6" fill="currentColor" />
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
+    <section id="home">
+        <!-- MOBILE TOP BAR: dark mode left, nav toggle right -->
+        <header>
+            <button onclick="toggleDarkMode()" id="toggle" aria-label="Toggle dark mode" aria-pressed="false">
+                <svg width="30" height="30" id="light-icon" aria-hidden="true" focusable="false">
+                    <circle cx="15" cy="15" r="6" fill="currentColor" />
                     <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15"
                         y2="4"></line>
-
                     <use href="#ray" transform="rotate(45 15 15)" />
                     <use href="#ray" transform="rotate(90 15 15)" />
                     <use href="#ray" transform="rotate(135 15 15)" />
@@ -41,14 +34,25 @@
                     <use href="#ray" transform="rotate(270 15 15)" />
                     <use href="#ray" transform="rotate(315 15 15)" />
                 </svg>
-                <svg width="30" height="30" id="dark-icon">
+                <svg width="30" height="30" id="dark-icon" aria-hidden="true" focusable="false">
                     <path fill="currentColor" d="
       M 23, 5
       A 12 12 0 1 0 23, 25
       A 12 12 0 0 1 23, 5" />
                 </svg>
             </button>
+            <button id="nav-toggle" onclick="toggleDrawer()" aria-label="Open navigation" aria-expanded="false"
+                aria-controls="nav-drawer">
+                <svg width="24" height="24" aria-hidden="true" focusable="false">
+                    <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" />
+                    <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" />
+                </svg>
+            </button>
         </header>
+        <div class="nav-backdrop" id="nav-backdrop" onclick="closeDrawer()"></div>
 
         <div class="row">
             <div class="column fixed-col">
@@ -57,29 +61,30 @@
                     <h2 class="subtitle">Frontend Fullstack Developer</h2>
                     <p>I build accessible, pixel-perfect digital experiences for the web.</p>
                     <p>Looking for my next coup de cœur</p>
-                    <p>Searching for a cool crew.</p>
                     <a href="mailto:mmldesigns007@gmail.com" target="_blank" rel="noopener noreferrer" class="resume">
                         Email</a>
-                    <nav>
-                        <a href="#work">Opportunities</a>
-                        <a href="#project">Builds</a>
-                        <a href="#about" class="active">Integrity</a>
+                    <nav id="nav-drawer" aria-label="Primary navigation">
+                        <a href="#work" onclick="closeDrawer()">Opportunities</a>
+                        <a href="#project" onclick="closeDrawer()">Builds</a>
+                        <a href="#about" onclick="closeDrawer()">Integrity</a>
                     </nav>
                     <div class="social">
-                        <a href="https://www.linkedin.com/in/michellelefebvre1/" class="social">
-                            <img src="images/linkedin.png" alt="linkedin" width="38" class=".social" title="LinkedIn">
+                        <a href="https://www.linkedin.com/in/michellelefebvre1/" aria-label="LinkedIn profile"
+                            target="_blank" rel="noopener noreferrer">
+                            <img src="images/linkedin.png" alt="" width="38" class="social" aria-hidden="true">
                         </a>
-                        <a href="https://github.com/Michelle-Lefebvre">
-                            <img src="images/github.png" alt="github icon" width="38" class="mx-auto d-block social"
-                                title="GitHub">
+                        <a href="https://github.com/Michelle-Lefebvre" aria-label="GitHub profile" target="_blank"
+                            rel="noopener noreferrer">
+                            <img src="images/github.png" alt="" width="38" class="social" aria-hidden="true">
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="column">
+            <main id="main-content" class="column">
                 <!-- ABOUT -->
-                <section id="about">
-                    <p class="subtitle">Front-End Fullstack Developer | React & A11Y Specialist
+                <section id="about" aria-labelledby="about-heading">
+                    <h2 id="about-heading" class="visually-hidden">About</h2>
+                    <p class="subtitle">Front-End Fullstack Developer | React &amp; A11Y Specialist
                         Montreal, QC | Secret Security Clearance (Level II)</p>
 
                     <p class="about-titles">The Blueprint</p>
@@ -101,24 +106,25 @@
                     </p>
                     <p class="about-titles">The Impact</p>
                     <p>
-                        I’m at my best when code meets scale and human complexity. Whether I’m architecting React
+                        I'm at my best when code meets scale and human complexity. Whether I'm architecting React
                         mono-repos for
                         <span>22 million users at HMH</span> or pioneering AR experiments at <span>Valtech</span>, my
                         focus is on
-                        building "digital infrastructure" that lasts. I don’t just write components; I build systems
+                        building "digital infrastructure" that lasts. I don't just write components; I build systems
                         that are
                         accessible to everyone and documented so clearly that anyone can step in and lead.
                     </p>
-                    <p class="about-titles">Why I’m Different</p>
+                    <p class="about-titles">Why I'm Different</p>
                     <ul>
                         <li><span>The Architectural Edge: </span>I treat codebases like blueprints—modular, scalable,
                             and
-                            meticulously structured. I’m the developer who speaks the language of both design and
+                            meticulously structured. I'm the developer who speaks the language of both design and
                             engineering.</li>
 
-                        <li><span>Scale & Security: </span>7+ years of dev experience combined with a Secret Security
+                        <li><span>Scale &amp; Security: </span>7+ years of dev experience combined with a Secret
+                            Security
                             Clearance
-                            (Level II). I’m trusted with the high-stakes stuff.</li>
+                            (Level II). I'm trusted with the high-stakes stuff.</li>
 
                         <li><span>Fearless Problem Solving: </span>I live for the "impossible" tasks. At Valtech, I
                             pioneered a way
@@ -129,9 +135,9 @@
                             away.</li>
 
                         <li><span>Community Advocacy: </span>
-                            I’m a long-time mentor for <span>Canada Learning Code</span> and <span>Girls Learning
+                            I'm a long-time mentor for <span>Canada Learning Code</span> and <span>Girls Learning
                                 Code</span>, and I
-                            was a featured speaker for <span>Valtech’s International Women’s Day</span> celebration.
+                            was a featured speaker for <span>Valtech's International Women's Day</span> celebration.
                         </li>
 
                         <li><span>Award-Winning Logic: </span>
@@ -146,8 +152,8 @@
                     <p><span class="about-titles">Core: </span>React, TypeScript, JavaScript (ES6+), Node.js,
                         HTML5/CSS3.
                     </p>
-                    <p><span class="about-titles">Styles & UI: </span>MUI, Tailwind CSS, Styled Components, Storybook,
-                        Figma.
+                    <p><span class="about-titles">Styles &amp; UI: </span>MUI, Tailwind CSS, Styled Components,
+                        Storybook, Figma.
                     </p>
                     <p><span class="about-titles">The Rest: </span>A11Y Standards, Jest, RTL, Contentful, Git.
                     </p>
@@ -155,7 +161,9 @@
                 </section>
 
                 <!-- PROJECTS -->
-                <section id="project">
+                <section id="project" aria-labelledby="project-heading">
+                    <h2 id="project-heading" class="visually-hidden">Projects</h2>
+
                     <!-- Augmented Reality -->
                     <div class="prj-section prj-ar">
                         <div class="content">
@@ -170,7 +178,7 @@
                                     breaking
                                     the
                                     immersion and hurting conversion rates.</li>
-                                <li class="prj-text"><span>The Breakthrough: </span> I engineered a method to inject
+                                <li class="prj-text"><span>The Breakthrough: </span> I engineered a method to inject
                                     a
                                     responsive HTML/CSS
                                     layer
@@ -180,7 +188,8 @@
                                     AR
                                     experience, creating a seamless shopping flow.</li>
                             </ul>
-                            <button onclick="modalAr.showModal()" class="btn-open">See More</button>
+                            <button onclick="modalAr.showModal()" class="btn-open" aria-haspopup="dialog"
+                                aria-controls="modalAr">See More</button>
                             <p class="pill">
                                 <span>8thWall</span>
                                 <span>PlayCanvas</span>
@@ -193,13 +202,17 @@
                         </div>
                     </div>
                     <!-- MODAL AR -->
-                    <dialog id="modalAr">
+                    <dialog id="modalAr" aria-modal="true" aria-labelledby="modal-ar-title">
+                        <h3 id="modal-ar-title" class="visually-hidden">AR Commerce Project</h3>
                         <div class="link-close">
                             <a href="https://www.futurestudio.valtech.com/innovations/omniar/" target="_blank"
                                 rel="noopener noreferrer" class="resume prj-link">View OmniAR</a>
-                            <button onclick="modalAr.close()" class="closeBtn btn-open">X</button>
+                            <button onclick="modalAr.close()" class="closeBtn btn-open"
+                                aria-label="Close AR Commerce dialog">X</button>
                         </div>
-                        <img src="images/Collage-AR.png" alt="" class="prj-modal">
+                        <img src="images/Collage-AR.png"
+                            alt="Collage of screenshots from the OmniAR augmented reality shopping experience"
+                            class="prj-modal">
                     </dialog>
 
                     <!-- JITTERS -->
@@ -226,7 +239,8 @@
                                     micro-framework itself.
                                 </li>
                             </ul>
-                            <button onclick="modalJitters.showModal()" class="btn-open">see more</button>
+                            <button onclick="modalJitters.showModal()" class="btn-open" aria-haspopup="dialog"
+                                aria-controls="modalJitters">See more</button>
                             <p class="pill">
                                 <span>PHP</span>
                                 <span>Twig</span>
@@ -239,18 +253,21 @@
                     </div>
 
                     <!-- MODAL JITTER -->
-                    <dialog id="modalJitters" class="prj-modal">
-
+                    <dialog id="modalJitters" aria-modal="true" aria-labelledby="modal-jitters-title">
+                        <h3 id="modal-jitters-title" class="visually-hidden">Jitters Project</h3>
                         <div class="link-close">
                             <a href="https://github.com/Michelle-Lefebvre/ProjectJitters" target="_blank"
                                 rel="noopener noreferrer" class="resume prj-link">View Staging Site</a>
                             <a href="images/JittersPresentation.pdf" target="_blank" rel="noopener noreferrer"
                                 class="resume prj-link">View
                                 Presentation</a>
-                            <button onclick="modalJitters.close()" class="closeBtn btn-open">X</button>
+                            <button onclick="modalJitters.close()" class="closeBtn btn-open"
+                                aria-label="Close Jitters dialog">X</button>
                         </div>
 
-                        <img src="images/collage-Jitters.png" alt="" class="prj-modal">
+                        <img src="images/collage-Jitters.png"
+                            alt="Collage of screenshots from the Jitters fullstack web application showing admin and public interfaces"
+                            class="prj-modal">
                     </dialog>
 
                     <!-- MAD SCIENCE -->
@@ -273,7 +290,8 @@
                                     launch was seamless.
                                 </li>
                             </ul>
-                            <button onclick="modalMadSci.showModal()" class="btn-open">view</button>
+                            <button onclick="modalMadSci.showModal()" class="btn-open" aria-haspopup="dialog"
+                                aria-controls="modalMadSci">View</button>
                             <p class="pill">
                                 <span>HTML</span>
                                 <span>CSS</span>
@@ -285,15 +303,18 @@
                         </div>
                     </div>
                     <!-- MODAL MAD SCIENCE -->
-                    <dialog id="modalMadSci" class="prj-modal">
-
+                    <dialog id="modalMadSci" aria-modal="true" aria-labelledby="modal-madsci-title">
+                        <h3 id="modal-madsci-title" class="visually-hidden">Mad Science Netherlands Project</h3>
                         <div class="link-close">
                             <a href="https://madsciencegroup.github.io/MSG_National_NL/public/nl-EN_index.html"
                                 target="_blank" rel="noopener noreferrer" class="resume prj-link">View Staging
                                 Site</a>
-                            <button onclick="modalMadSci.close()" class="closeBtn btn-open">X</button>
+                            <button onclick="modalMadSci.close()" class="closeBtn btn-open"
+                                aria-label="Close Mad Science dialog">X</button>
                         </div>
-                        <img src="images/Collage_MadScience.jpg" alt="" class="prj-modal">
+                        <img src="images/Collage_MadScience.jpg"
+                            alt="Collage of screenshots from the Mad Science Netherlands bilingual responsive website"
+                            class="prj-modal">
                     </dialog>
 
                     <!-- DOGGIE MATCH -->
@@ -313,7 +334,7 @@
                                     owners.
 
                                 </li>
-                                <li class="prj-text"><span>The Breakthrough: </span>Our team’s execution took 3rd
+                                <li class="prj-text"><span>The Breakthrough: </span>Our team's execution took 3rd
                                     place worldwide. I focused on the UI/UX architecture, ensuring the
                                     React-driven interface felt intuitive and "swipe-ready." By leveraging a lean
                                     JAMstack approach, we integrated external
@@ -321,7 +342,8 @@
                                     Application (SPA) in a single weekend.
                                 </li>
                             </ul>
-                            <button onclick="modalDog.showModal()" class="btn-open">view</button>
+                            <button onclick="modalDog.showModal()" class="btn-open" aria-haspopup="dialog"
+                                aria-controls="modalDog">View</button>
                             <p class="pill">
                                 <span>React</span>
                                 <span>JavaScript</span>
@@ -333,26 +355,31 @@
                     </div>
 
                     <!-- MODAL DOGGIE MATCH -->
-                    <dialog id="modalDog">
+                    <dialog id="modalDog" aria-modal="true" aria-labelledby="modal-dog-title">
+                        <h3 id="modal-dog-title" class="visually-hidden">Doggie Match Project</h3>
                         <div class="link-close">
                             <a href="https://github.com/nixin72/grilled-chicken" target="_blank"
                                 rel="noopener noreferrer" class="resume prj-link">Source Code</a>
                             <a href="https://www.youtube.com/watch?v=IVsGFgJ_g6c" target="_blank"
                                 rel="noopener noreferrer" class="resume prj-link">View Video</a>
-                            <button onclick="modalDog.close()" class="closeBtn btn-open">X</button>
+                            <button onclick="modalDog.close()" class="closeBtn btn-open"
+                                aria-label="Close Doggie Match dialog">X</button>
                         </div>
-                        <img src="images/Collage_DoogieMatch.png" alt="" class="prj-modal">
+                        <img src="images/Collage_DoogieMatch.png"
+                            alt="Collage of screenshots from the Doggie Match hackathon-winning React dog adoption app"
+                            class="prj-modal">
                     </dialog>
 
                 </section>
                 <!-- WORK -->
-                <section id="work">
+                <section id="work" aria-labelledby="work-heading">
+                    <h2 id="work-heading" class="visually-hidden">Work Experience</h2>
                     <div class="card">
                         <div class="card-details">
                             <p class="card-job-title">Associate Software Developer | HMH</p>
                             <p class="text-years">2022 - 2024</p>
 
-                            <ul class="card-details" aria-label="job details">
+                            <ul class="card-details" aria-label="HMH job details">
                                 <li>Developed and maintained a scalable <span>React mono-repo</span> reporting
                                     platform
                                     serving over <span>22 million users</span> in the educational sector.</li>
@@ -360,7 +387,7 @@
                                         Components</span> ensuring 100% compliance with <span>A11Y
                                         (Accessibility)</span> standards for diverse learner needs.
                                 </li>
-                                <li><span>Security & Connectivity Lead:</span> Identified and engineered a critical
+                                <li><span>Security &amp; Connectivity Lead:</span> Identified and engineered a critical
                                     fix
                                     for a recurring <span>security software connectivity issue</span>. Authored the
                                     official internal documentation and served as the <span>primary technical
@@ -403,12 +430,12 @@
                         <div class="card-details">
                             <p class="card-job-title">Frontend Developer | Valtech</p>
                             <p class="text-years">2020 - 2022</p>
-                            <ul class="card-details" aria-label="job details">
+                            <ul class="card-details" aria-label="Valtech job details">
                                 <li><span>Innovation: </span>Pioneered an AR Proof-of-Concept for Future Studios using
                                     <span>PlayCanvas</span> and <span>8th Wall</span>, successfully injecting HTML/CSS
                                     into an AR environment to enable in-app purchasing.
                                 </li>
-                                <li><span>Documentation & Instruction: </span>Authored comprehensive technical
+                                <li><span>Documentation &amp; Instruction: </span>Authored comprehensive technical
                                     documentation and <span>led client training sessions</span>, instructing
                                     stakeholders on how to effectively operate and manage the software solutions
                                     developed by the team.</li>
@@ -416,7 +443,7 @@
                                     using <span>React, Vue, and Angular</span>.</li>
                                 <li>Acted as a technical instructor for <span>TechGirl</span> events across Chicago,
                                     Toronto, and NYC, mentoring the next generation of developers.</li>
-                                <li>Managed content delivery via <span>Contentful</span>and integrated secure payment
+                                <li>Managed content delivery via <span>Contentful</span> and integrated secure payment
                                     gateways with <span>Stripe</span> for e-commerce projects.</li>
                             </ul>
                             <div class="pill">
@@ -458,8 +485,8 @@
                     <div class="card">
                         <div class="card-details">
                             <p class="card-job-title">Independent Front-End Consultant | MML Designs</p>
-                            <p class="text-years">2017 - 2002</p>
-                            <ul class="card-details" aria-label="job details">
+                            <p class="text-years">2017 - 2020</p>
+                            <ul class="card-details" aria-label="MML Designs job details">
                                 <li><span>Client: Reitmans: </span>Assisted the personalization team in a fast-paced
                                     sprint environment. Developed front-end interfaces for user profiles and secure
                                     credit card payment selection.</li>
@@ -490,36 +517,12 @@
                     <a href="images/Resume-Lefebvre2026.pdf" target="_blank" rel="noopener noreferrer"
                         class="resume">See Full
                         Resume</a>
-                    <!-- <div class="card">
-                        <div class="card-years text-years">
-                            <p>2020 - 202?</p>
-                        </div>
-                        <div class="card-details">
-                            <p class="card-job-title">Job Title</p>
-                            <ul class="card-details" aria-label="job details">
-                                <li><span>bold</span> item</li>
-                                <li><span>bold</span> item</li>
-                                <li><span>bold</span> item</li>
-                                <li><span>bold</span> item</li>
-                                <li><span>bold</span> item</li>
-                            </ul>
-                            <p class="pill">
-                                <span>pill</span>
-                                <span>pill</span>
-                                <span>pill</span>
-                                <span>pill</span>
-                                <span>pill</span>
-                                <span>pill</span>
-                            </p>
-                        </div>
-                    </div> -->
                 </section>
 
-            </div>
+            </main>
         </div>
     </section>
 
-    <script src="script.js"></script>
 </body>
 
 </html>
