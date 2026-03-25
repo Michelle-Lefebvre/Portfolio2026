@@ -5,6 +5,7 @@ function toggleDarkMode() {
 
 // Modal
 const showButtons = document.querySelectorAll(".show")
+const closeButtons = document.querySelectorAll(".close")
 
 showButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -13,9 +14,6 @@ showButtons.forEach((btn) => {
     modal.showModal()
   })
 })
-
-// Select all close buttons
-const closeButtons = document.querySelectorAll(".close")
 
 closeButtons.forEach((btn) => {
   btn.addEventListener("click", () => {

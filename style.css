@@ -518,9 +518,9 @@ li.prj-text {
     gap: 0;
     max-width: 100%;
   }
-  li {
+  /* li {
     width: 70vw;
-  }
+  } */
   .card-job-title {
     width: 70vw;
   }
