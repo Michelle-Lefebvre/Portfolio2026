@@ -3,8 +3,8 @@
   --color-bg-secondary: #c2c8da;
   --color-accent: #56678b;
   --color-accent-primary: #fc3357;
-  --color-text-title: #7686a7;
-  --color-text: #56678b;
+  --color-text-title: #525c80;
+  --color-text: #465172;
 
   --color-hover: rgba(126, 139, 158, 0.1);
   --color-hover-pill: rgba(126, 139, 158, 0.2);
@@ -353,7 +353,7 @@ a.resume {
   border: 1px solid var(--color-accent);
   border-radius: var(--space-xs);
   font-size: var(--space-sim2);
-  color: var(--color-accent);
+  color: var(--color-text-title);
   padding: var(--button-padding);
   background: none;
   font-weight: 600;
@@ -477,7 +477,7 @@ ul.card-details {
 }
 
 p.pill span {
-  background-color: var(--color-hover-pill-modal);
+  background-color: #003;
 }
 
 div.pill {
