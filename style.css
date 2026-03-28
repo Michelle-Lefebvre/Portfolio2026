@@ -120,6 +120,10 @@ body.dark-mode .prj-text.subtitle {
 body.dark-mode p.pill span {
   background-color: var(--color-bg-secondary);
 }
+body.dark-mode .btn-open {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
 
 /* =====================
    TYPOGRAPHY
@@ -372,6 +376,8 @@ a.resume:hover {
   margin: var(--space-md) auto;
   padding: var(--space-sm) var(--space-md);
   font-size: var(--space-sim);
+  color: var(--color-bg-secondary);
+  border-color: var(--color-bg-secondary);
 }
 
 /* =====================
