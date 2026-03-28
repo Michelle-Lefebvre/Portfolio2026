@@ -635,6 +635,7 @@ dialog::backdrop {
 .closeBtn {
   margin: auto 0 auto auto;
   border: none;
+  color: #0f172a;
   font-size: x-large;
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
@@ -656,6 +657,8 @@ dialog::backdrop {
 }
 
 a.prj-link {
+  border-color: #0f172a;
+  color: #0f172a;
   margin: 0;
   width: auto;
 }
