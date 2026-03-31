@@ -37,6 +37,52 @@ function closeDrawer() {
   toggle.setAttribute("aria-label", "Open navigation")
 }
 
+// Change to addEventListener instead of inline onclick
+document.getElementById("toggle").addEventListener("click", toggleDarkMode)
+document.getElementById("nav-toggle").addEventListener("click", toggleDrawer)
+document.getElementById("nav-backdrop").addEventListener("click", closeDrawer)
+
+document.getElementById("btn-open-ar").addEventListener("click", function () {
+  document.getElementById("modalAr").showModal()
+})
+document.getElementById("btn-close-ar").addEventListener("click", function () {
+  document.getElementById("modalAr").close()
+})
+
+document
+  .getElementById("btn-open-jitters")
+  .addEventListener("click", function () {
+    document.getElementById("modalJitters").showModal()
+  })
+document
+  .getElementById("btn-close-jitters")
+  .addEventListener("click", function () {
+    document.getElementById("modalJitters").close()
+  })
+
+document
+  .getElementById("btn-open-madsci")
+  .addEventListener("click", function () {
+    document.getElementById("modalMadSci").showModal()
+  })
+document
+  .getElementById("btn-close-madsci")
+  .addEventListener("click", function () {
+    document.getElementById("modalMadSci").close()
+  })
+
+document.getElementById("btn-open-dog").addEventListener("click", function () {
+  document.getElementById("modalDog").showModal()
+})
+document.getElementById("btn-close-dog").addEventListener("click", function () {
+  document.getElementById("modalDog").close()
+})
+
+// Close drawer when nav links are clicked
+document.querySelectorAll("#nav-drawer a").forEach(function (link) {
+  link.addEventListener("click", closeDrawer)
+})
+
 // Update aria-current on nav links as sections scroll into view
 var navLinks = document.querySelectorAll("nav a[href^='#']")
 

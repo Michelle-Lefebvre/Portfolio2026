@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; object-src 'none'; upgrade-insecure-requests">
     <link rel="icon" href="images/MMLlogo.png" type="image/x-icon">
-    <title>Michelle Lefebvre — Portfolio</title>
+    <title>Building...Michelle Lefebvre Portfolio</title>
     <meta name="description"
         content="Michelle Lefebvre's portfolio — Frontend Full stack developer building thoughtful, accessible digital experiences.">
     <meta name="author" content="Michelle Lefebvre">
@@ -39,7 +41,7 @@
     <div id="home">
         <!-- MOBILE TOP BAR: dark mode left, nav toggle right -->
         <header>
-            <button onclick="toggleDarkMode()" id="toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <button id="toggle" aria-label="Toggle dark mode" aria-pressed="false">
                 <svg width="30" height="30" id="light-icon" aria-hidden="true" focusable="false">
                     <circle cx="15" cy="15" r="6" fill="currentColor" />
                     <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15"
@@ -59,7 +61,7 @@
       A 12 12 0 0 1 23, 5" />
                 </svg>
             </button>
-            <button id="nav-toggle" onclick="toggleDrawer()" aria-label="Open navigation" aria-expanded="false"
+            <button id="nav-toggle" aria-label="Open navigation" aria-expanded="false"
                 aria-controls="nav-drawer">
                 <svg width="24" height="24" aria-hidden="true" focusable="false">
                     <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -70,7 +72,7 @@
                 </svg>
             </button>
         </header>
-        <div class="nav-backdrop" id="nav-backdrop" onclick="closeDrawer()"></div>
+        <div class="nav-backdrop" id="nav-backdrop"></div>
 
         <div class="row">
             <div class="column fixed-col">
@@ -83,9 +85,9 @@
                     <a href="mailto:mmldesigns007@gmail.com" target="_blank" rel="noopener noreferrer" class="resume">
                         Email</a>
                     <nav id="nav-drawer" aria-label="Primary navigation">
-                        <a href="#work" onclick="closeDrawer()">Opportunities</a>
-                        <a href="#project" onclick="closeDrawer()">Builds</a>
-                        <a href="#about" onclick="closeDrawer()">Integrity</a>
+                        <a href="#work">Opportunities</a>
+                        <a href="#project">Builds</a>
+                        <a href="#about">Integrity</a>
                     </nav>
                     <div class="social">
                         <a href="https://www.linkedin.com/in/michellelefebvre1/" aria-label="LinkedIn profile"
@@ -213,7 +215,7 @@
                                     AR
                                     experience, creating a seamless shopping flow.</li>
                             </ul>
-                            <button onclick="modalAr.showModal()" class="btn-open" aria-haspopup="dialog"
+                            <button id="btn-open-ar" class="btn-open" aria-haspopup="dialog"
                                 aria-controls="modalAr">See More</button>
                             <p class="pill">
                                 <span>8thWall</span>
@@ -232,7 +234,7 @@
                         <div class="link-close">
                             <a href="https://www.futurestudio.valtech.com/innovations/omniar/" target="_blank"
                                 rel="noopener noreferrer" class="resume prj-link">View OmniAR</a>
-                            <button onclick="modalAr.close()" class="closeBtn"
+                            <button id="btn-close-ar" class="closeBtn"
                                 aria-label="Close AR Commerce dialog">X</button>
                         </div>
                         <img src="images/Collage-AR.png"
@@ -256,7 +258,7 @@
                                     product lifecycle from concept to deployment.
                                 </li>
                             </ul>
-                            <button onclick="modalJitters.showModal()" class="btn-open" aria-haspopup="dialog"
+                            <button id="btn-open-jitters" class="btn-open" aria-haspopup="dialog"
                                 aria-controls="modalJitters">See more</button>
                             <p class="pill">
                                 <span>PHP</span>
@@ -279,7 +281,7 @@
                             <a href="images/JittersPresentation.pdf" target="_blank" rel="noopener noreferrer"
                                 class="resume prj-link">View
                                 Presentation</a>
-                            <button onclick="modalJitters.close()" class="closeBtn"
+                            <button id="btn-close-jitters" class="closeBtn"
                                 aria-label="Close Jitters dialog">X</button>
                         </div>
 
@@ -305,7 +307,7 @@
                                     global rollout.
                                 </li>
                             </ul>
-                            <button onclick="modalMadSci.showModal()" class="btn-open" aria-haspopup="dialog"
+                            <button id="btn-open-madsci" class="btn-open" aria-haspopup="dialog"
                                 aria-controls="modalMadSci">View</button>
                             <p class="pill">
                                 <span>HTML</span>
@@ -324,7 +326,7 @@
                             <a href="https://madsciencegroup.github.io/MSG_National_NL/public/nl-EN_index.html"
                                 target="_blank" rel="noopener noreferrer" class="resume prj-link">View Staging
                                 Site</a>
-                            <button onclick="modalMadSci.close()" class="closeBtn"
+                            <button id="btn-close-madsci" class="closeBtn"
                                 aria-label="Close Mad Science dialog">X</button>
                         </div>
                         <img src="images/Collage_MadScience.jpg"
@@ -347,7 +349,7 @@
                                     integration in 48 hours.
                                 </li>
                             </ul>
-                            <button onclick="modalDog.showModal()" class="btn-open" aria-haspopup="dialog"
+                            <button id="btn-open-dog" class="btn-open" aria-haspopup="dialog"
                                 aria-controls="modalDog">View</button>
                             <p class="pill">
                                 <span>React</span>
@@ -367,7 +369,7 @@
                                 rel="noopener noreferrer" class="resume prj-link">Source Code</a>
                             <a href="https://www.youtube.com/watch?v=IVsGFgJ_g6c" target="_blank"
                                 rel="noopener noreferrer" class="resume prj-link">View Video</a>
-                            <button onclick="modalDog.close()" class="closeBtn"
+                            <button id="btn-close-dog" class="closeBtn"
                                 aria-label="Close Doggie Match dialog">X</button>
                         </div>
                         <img src="images/Collage_DoogieMatch.png"
