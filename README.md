@@ -8,4 +8,4 @@ onclick becomes addEventListener("click")
 2. Add meta tag for http content including fonts 
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; ... object-src 'none'; upgrade-insecure-requests">
 3. The CSP directive script-src 'self' tells the browser: only run JavaScript that comes from this origin's own files.
-4. To prevent jumping when hovering use OUTLINE not border!
+4. 4. To prevent jumping when hovering use OUTLINE not border!
